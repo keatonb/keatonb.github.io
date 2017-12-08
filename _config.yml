@@ -4,13 +4,13 @@ url: "http://keatonb.github.io"    # the protocol and hostname of your site, eg.
 baseurl: "" # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
 #timezone: Asia/Chongqing
 description: >
-  One or more sentences introducing this blog.
+  Keaton Bell's blog about science, statistics, data visualization, and other useful tricks.
 
 # Your information
-email: your_email@example.com
-author: your_name
+email: bell@mps.mpg.de
+author: Keaton Bell
 avatar: "//www.gravatar.com/avatar/your_email_md5?d=mm&s=135"
-profile: One sentence introducing yourself.
+profile: Astrophysicist.
 twitter_username: astrokeat
 #github_username:  github_username
 
