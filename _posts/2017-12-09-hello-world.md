@@ -2,7 +2,7 @@
 layout: post
 title:  "Hello World"
 date:   2017-12-09 13:00
-categories: jekyll
+categories: general
 permalink: /archivers/hello
 ---
 
