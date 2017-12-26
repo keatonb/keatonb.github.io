@@ -5,13 +5,12 @@ body {
 	line-height: $base-line-height;
 }
 a {
-        text-decoration: none;
-        border-bottom: 1px dotted;
+        text-decoration-style: dotted;
+        text-decoration: underline;
 	color: #4F5C2F;
 }
 a:hover, a:focus {
 	text-decoration:underline;
-        border: none;
 	color: #546628;
 }
 blockquote {
