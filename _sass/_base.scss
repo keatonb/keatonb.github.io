@@ -5,7 +5,8 @@ body {
 	line-height: $base-line-height;
 }
 a {
-	text-decoration: none;
+	text-decoration: underline;
+        text-decoration-style: dotted;
 	color: #4F5C2F;
 }
 a:hover, a:focus {
