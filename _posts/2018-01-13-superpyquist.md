@@ -2,7 +2,7 @@
 layout: post
 title:  "Nyquist analysis and the pyquist module"
 date:   2018-01-13 22:00
-categories: python,analysis
+categories: [python,analysis]
 permalink: /archivers/pyquist
 ---
 
