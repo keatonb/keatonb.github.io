@@ -2,7 +2,7 @@
 layout: post
 title:  "Nyquist analysis and the pyquist module"
 date:   2018-01-13 22:00
-categories: [python,analysis]
+categories: [python, analysis]
 permalink: /archivers/pyquist
 ---
 
@@ -10,7 +10,7 @@ My collaborators and I recently published a paper in which we determined frequen
 
 The signal processing problem of Nyquist aliasing is well demonstrated by film.  Video is regularly sampled time series data.  Have you ever noticed a rapidly rotating object, such as an airplane propeller, appearing to rotate slowly or backwards, or to even stand still in a movie?  It sure can look strange!
 
-<iframe src="https://giphy.com/embed/94lybh8udBpSw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/perception-wagon-wheel-effect-daily-explainer-94lybh8udBpSw">via GIPHY</a></p>
+<iframe src="https://giphy.com/embed/94lybh8udBpSw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><a href="https://giphy.com/gifs/perception-wagon-wheel-effect-daily-explainer-94lybh8udBpSw">via GIPHY</a>
 
 This effect is due to a mismatch between the low frame rate of film and the rapid rate of motion of the observed object. If more than half a cycle is executed between each observation, the perceived rate (and possibly direction) of motion will be wrong.
 
