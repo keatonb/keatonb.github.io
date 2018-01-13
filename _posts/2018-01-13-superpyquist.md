@@ -24,6 +24,6 @@ A disturbing consequence is that, without external information, it can be non-tr
 
 <img src="http://keatonb.github.io/img/pyquist_demo.png" />
 
-Unfortunately, this code doesn't resolve the ambiguities alone; you're still going to need to put some external constraints on the system (in my case, I took a small amount of additional data), but this code can help to explore the set of possible solutions or to design an experiment that avoids the problem altogether.   This code has already proved useful in my more recent projects (keep an eye on my [main website](http://www2.mps.mpg.de/homes/bell/research.html) or [Twitter](https://twitter.com/astrokeat) for updates on that), and I hope that others might find it helpful too.
+Unfortunately, this code doesn't resolve the ambiguities alone; you're still going to need to put some external constraints on the system (in my case, I took a small amount of additional data), but pyquist can help to explore the set of possible solutions or to design an experiment that avoids the problem altogether.   This code has already proved useful in my more recent projects (keep an eye on my [main website](http://www2.mps.mpg.de/homes/bell/research.html) or [Twitter](https://twitter.com/astrokeat) for updates on that), and I hope that others might find it helpful too.
 
 Besides, you know you want to `from pyquist import superfreq`... it's super fun to type.
