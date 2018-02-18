@@ -36,15 +36,15 @@ This is a very useful result! We now know how much more likely it is to observe 
 Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) through a function \\(i(y)\\). Some narrow range \\(dy\\) must contain the name fraction of isotropic orientations as the corresponding \\(di\\).  While the p.d.f. of \\(i\\) is given by \\(f(i)\\) above, we seek a flat \\(g(y)\\) that relates to \\(f(i)\\) through
 
 \\[f(i)di =
-f(i(y))|\frac{di}{dy}|dy =
+f(i(y))\abs[\Big]{\frac{di}{dy}}dy =
 g(y)dy \propto dy.
 \\]
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
-\\[\vert\frac{di}{dy}\vert \propto 1/f(i(y)).\\]
+\\[\abs[\Big]{\frac{di}{dy}} \propto 1/f(i(y)).\\]
 
-This relationship is satisfied by the transformation (\\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \vert\frac{di}{dy}\vert = 1/\sqrt{1-y^2}\\).
+This relationship is satisfied by the transformation (\\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \abs[\Big]{\frac{di}{dy}} = 1/\sqrt{1-y^2}\\).
 
 So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly distributed for isotropic inclination angles, yielding the easy-to-draw-from p.d.f.:
 
