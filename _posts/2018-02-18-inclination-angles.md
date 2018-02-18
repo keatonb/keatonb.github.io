@@ -44,7 +44,7 @@ If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearran
 
 \\[\abs[\Big]{\frac{di}{dy}} \propto 1/f(i(y)).\\]
 
-This relationship is satisfied by the transformation \\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \left|{\frac{di}{dy}\right| = 1/\sqrt{1-y^2}\\).
+This relationship is satisfied by the transformation \\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \abs{\frac{di}{dy}} = 1/\sqrt{1-y^2}\\).
 
 So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly distributed for isotropic inclination angles, yielding the easy-to-draw-from p.d.f.:
 
