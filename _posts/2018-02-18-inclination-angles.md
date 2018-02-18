@@ -42,9 +42,9 @@ g(y)dy \propto dy.
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
-\\[|\frac{di}{dy}| \propto 1/f(i(y)).\\]
+\\[\vert\frac{di}{dy}\vert \propto 1/f(i(y)).\\]
 
-This relationship is satisfied by the transformation (\\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = |\frac{di}{dy}| = 1/\sqrt{1-y^2}\\).
+This relationship is satisfied by the transformation (\\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \vert\frac{di}{dy}\vert = 1/\sqrt{1-y^2}\\).
 
 So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly distributed for isotropic inclination angles, yielding the easy-to-draw-from p.d.f.:
 
