@@ -25,6 +25,9 @@ gems:
  - jekyll-gist
  - jemoji
 
+plugins:
+  - jekyll-seo-tag
+
 # Build settings
 paginate: 5
 paginate_path: "page:num"
