@@ -37,10 +37,10 @@ Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) thr
 
 \\[f(i)di =
 f(i(y))|\frac{di}{dy}|dy =
-g(y)dy
-\\].
+g(y)dy \propto dy.
+\\]
 
-If we wish for \\(g(y)\\ to be constant over the relevant range, we can rearrange to get:
+If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
 \\[|\frac{di}{dy}| \propto 1/f(i(y))\\].
 
