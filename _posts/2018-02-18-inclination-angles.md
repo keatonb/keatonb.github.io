@@ -36,13 +36,13 @@ This is a very useful result! We now know how much more likely it is to observe 
 Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) through a function \\(i(y)\\). Some narrow range \\(dy\\) must contain the name fraction of isotropic orientations as the corresponding \\(di\\).  While the p.d.f. of \\(i\\) is given by \\(f(i)\\) above, we seek a flat \\(g(y)\\) that relates to \\(f(i)\\) through
 
 \\[f(i)di =
-f(i(y))\bigl\vert\frac{di}{dy}\bigr\vertdy =
+f(i(y))\bigl\vert\frac{di}{dy}\bigr\vert dy =
 g(y)dy \propto dy.
 \\]
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
-\\[\bigl\vert{\frac{di}{dy}\bigr\vert \propto 1/f(i(y)).\\]
+\\[\bigl\vert\frac{di}{dy}\bigr\vert\propto 1/f(i(y)).\\]
 
 This relationship is satisfied by the transformation \\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \bigl\vert\frac{di}{dy}\bigr\vert = 1/\sqrt{1-y^2}\\).
 
@@ -50,8 +50,8 @@ So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly d
 
 \\[g(\cos{i}) =
 \begin{cases}
-0,  & i < 0 \\\
+0,  & \cos{i} < 0 \\\
 1,  & 0 \le \cos{i} \le 1 \\\
-0, & i > 1.
+0, & \cos{i} > 1.
 \end{cases}\\]
 
