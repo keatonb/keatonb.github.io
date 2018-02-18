@@ -37,14 +37,14 @@ Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) thr
 
 \\[f(i)di =
 f(i(y))\bigl\vert\frac{di}{dy}\bigr\vert dy =
-g(y)dy \propto dy.
+g(y)dy.
 \\]
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
 \\[\bigl\vert\frac{di}{dy}\bigr\vert\propto 1/f(i(y)).\\]
 
-This relationship is satisfied by the transformation \\(y=\cos{i}\\) (\\(i(y)=\arccos{y}\\)), since \\(1/f(i(y)) = \bigl\vert\frac{di}{dy}\bigr\vert = 1/\sqrt{1-y^2}\\).
+This relationship is satisfied by the transformation \\(y=\cos{i}\\) A.K.A. \\(i(y)=\arccos{y}\\), since \\(1/f(i(y)) = \bigl\vert\frac{di}{dy}\bigr\vert = 1/\sqrt{1-y^2}\\).
 
 So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly distributed for isotropic inclination angles, yielding the easy-to-draw-from p.d.f.:
 
