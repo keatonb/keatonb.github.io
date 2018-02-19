@@ -1,6 +1,6 @@
-[keatonb.github.io](keatonb.github.io) -- uses the Jekyll Blog Theme ["EasyBook"](https://github.com/laobubu/jekyll-theme-EasyBook)
+[keatonb.github.io](http://keatonb.github.io/) -- uses the Jekyll Blog Theme ["EasyBook"](https://github.com/laobubu/jekyll-theme-EasyBook)
 
-### Easybook License
+### Easybook License:
 
 ```
 The MIT License (MIT)
