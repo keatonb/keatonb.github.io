@@ -37,7 +37,7 @@ Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) thr
 
 \\[f(i)di =
 f(i(y))\bigl\vert\frac{di}{dy}\bigr\vert dy =
-g(y)dy.
+g(y)dy.<sup>[1](#myfootnote1)</sup>
 \\]
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
@@ -55,3 +55,6 @@ So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly d
 0, & \cos{i} > 1.
 \end{cases}\\]
 
+---
+
+<a name="myfootnote1">1</a>: This method of changing variables of a p.d.f. is covered in Section 1.2.3. of E. L. Robinson's excellent book [Data Analysis for Scientists and Engineers](https://press.princeton.edu/titles/10911.html).  E.L.R. also taught me the mnemonic for remembering which orientation corresponds to \\(i=0\\), among many other things.
