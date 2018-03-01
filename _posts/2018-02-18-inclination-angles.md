@@ -37,8 +37,8 @@ Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) thr
 
 \\[f(i)di =
 f(i(y))\bigl\vert\frac{di}{dy}\bigr\vert dy =
-g(y)dy.<sup>[1](#myfootnote1)</sup>
-\\]
+g(y)dy.
+\\]<sup>[1](#myfootnote1)</sup>
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
