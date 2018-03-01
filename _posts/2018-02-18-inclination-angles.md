@@ -33,12 +33,12 @@ which we have normalized so that \\(\int_{-\infty}^{\infty}f(i)di = 1\\).
 
 This is a very useful result! We now know how much more likely it is to observe systems with high inclination angles than those pointed toward us. With a p.d.f. in hand, we can now generate random inclination angles for [Monte Carlo](https://en.wikipedia.org/wiki/Monte_Carlo_method) analyses.  However, a sine-distribution is not the most convenient choice to generate random numbers from. An inefficient way to do this would be to generate random numbers between 0 and \\(\pi\\), rejecting many in proportion to \\(1-\sin{i}\\) where they p.d.f. says inclinations are less likely. If we could find a way to change variables to an inclination representation that has a flat distribution, we wouldn’t have to waste any randomly generated numbers.
 
-Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) through a function \\(i(y)\\). Some narrow range \\(dy\\) must contain the name fraction of isotropic orientations as the corresponding \\(di\\).  While the p.d.f. of \\(i\\) is given by \\(f(i)\\) above, we seek a flat \\(g(y)\\) that relates to \\(f(i)\\) through
+Let’s call the variable that we seek \\(y\\), and let it relate to \\(i\\) through a function \\(i(y)\\). Some narrow range \\(dy\\) must contain the name fraction of isotropic orientations as the corresponding \\(di\\).  While the p.d.f. of \\(i\\) is given by \\(f(i)\\) above, we seek a flat \\(g(y)\\) that relates to \\(f(i)\\) through <sup>[1](#myfootnote1)</sup>
 
 \\[f(i)di =
 f(i(y))\bigl\vert\frac{di}{dy}\bigr\vert dy =
 g(y)dy.
-\\]<sup>[1](#myfootnote1)</sup>
+\\]
 
 If we wish for \\(g(y)\\) to be constant over the relevant range, we can rearrange to get:
 
