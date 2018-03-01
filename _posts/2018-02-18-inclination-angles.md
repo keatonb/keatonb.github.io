@@ -6,7 +6,7 @@ categories: [math, analysis]
 permalink: /archivers/uniforminclination
 ---
 
-Here’s a little math problem that I’ve done enough times to warrant writing down somewhere: how can we most efficiently represent and draw randomly from isotropic inclination angles? (spoiler: they’re uniform in \\(\cos{i}\\).)
+Here’s a little math problem that I’ve done enough times to warrant writing down somewhere: how can we most efficiently represent and randomly draw isotropic inclination angles? (spoiler: they’re uniform in \\(\cos{i}\\).)
 
 A useful quantity to know in many astronomical situations is the inclination angle of some system.  In my work, this is usually the orientation angle of a stellar rotation axis or the orbital plane of a binary star system. This is the angle with respect to the line of sight of the observer as depicted in this diagram:
 
