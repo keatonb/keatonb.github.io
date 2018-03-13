@@ -2,7 +2,7 @@
 layout: post
 title:  "Machine learning galaxy classification. I. Project description"
 date:   2018-03-13 22:10
-categories: [math, analysis]
+categories: [general,machine learning]
 permalink: /archivers/galaxyclassificationI
 ---
 
