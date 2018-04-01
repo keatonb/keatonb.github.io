@@ -2,7 +2,7 @@
 layout: post
 title:  "Generating Citable Paper Names with Recurrent Neural Networks"
 date:   2018-04-01 15:00
-categories: machine learning
+categories: [machine learning]
 permalink: /archivers/papernames
 ---
 
