@@ -168,3 +168,8 @@ favorites follow, but you can download the full sample
 
 
 
+---
+
+I hope you enjoyed my April Fools post.  If you find the text output
+of recurrent neural networks as funny as I do, I recommend checking
+out the blog by [lewisandquark](http://aiweirdness.com/).
