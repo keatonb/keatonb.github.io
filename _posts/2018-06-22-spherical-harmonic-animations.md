@@ -6,13 +6,13 @@ categories: [python, plotting]
 permalink: /archivers/shanimate
 ---
 
-This quick post demonstrates three Python tricks: computing spherical harmonics, plotting map projections with [Cartopy](https://scitools.org.uk/cartopy/docs/latest/), and saving animations in matplotlib.  I bring these together to generate animated gifs of spherical harmonics like the one below. These are useful for visualizing stellar pulsation geometries, and I often display these in talks or lectures.  If you want to skip right ahead to using the script I wrote to generate these animations, you can find it [here](https://github.com/keatonb/sphericalharmonics).
+This post demonstrates three Python tricks: computing spherical harmonics, plotting map projections with [Cartopy](https://scitools.org.uk/cartopy/docs/latest/), and saving animations in matplotlib.  I bring these together to generate animated gifs of spherical harmonics like the one below. These are useful for visualizing stellar pulsation geometries, and I often display these in talks or lectures.  If you want to skip right ahead to using the script I wrote to generate these animations, you can find it [here](https://github.com/keatonb/sphericalharmonics).
 
 <img src="https://raw.githubusercontent.com/keatonb/sphericalharmonics/master/l2m0.gif" />
 
 ### Spherical Harmonics
 
-I won't go into much detail on spherical harmonics (too much detail can be found on [Wikipedia](https://en.wikipedia.org/wiki/Spherical_harmonics) or elsewhere). The important thing is that they are commonly encountered in spherically symmetric systems.  The patterns associated with pulsation modes in stars are an example from my own work, and they also have prominent application to computing the orbitals of electrons in atoms.
+I won't go into much detail on spherical harmonics (too much detail can be found on [Wikipedia](https://en.wikipedia.org/wiki/Spherical_harmonics) and elsewhere). The important thing is that they are commonly encountered in spherically symmetric systems.  The patterns associated with pulsation modes in stars are an example from my own work, and they also have prominent application for computing the orbitals of electrons in atoms.
 
 Each spherical harmonic is defined by two quantum numbers, \\(\ell\\) and \\(m\\). The number of nodal lines on the surface (lines that are not affected by the harmonic pattern) is equal to \\(\ell\\), and \\(\vert m\vert\\) of these go through the poles. The example above shows \\(\ell=2\\), and \\(m=0\\). If \\(m!=0\\), the pattern appears to rotate about the poles in a direction that depends on the sign of \\(m\\). Because there are a total of \\(\ell\\) nodal lines, \\(\vert m\vert\leq\ell\\).
 
@@ -36,9 +36,9 @@ drm = np.transpose(np.real(d)) #only interested in real components
 
 ### Plotting Map Projections with Cartopy
 
-[Cartopy](https://scitools.org.uk/cartopy/docs/latest/) is a near Python package for plotting maps.  This allows us to visualize spherical harmonics appropriately on a sphere!  I had previously worked out how to do all of this with Basemap, but it seems [Cartopy is slated to replace Basemap](https://matplotlib.org/basemap/users/intro.html#cartopy-new-management-and-eol-announcement).
+[Cartopy](https://scitools.org.uk/cartopy/docs/latest/) is a neat Python package for plotting map data.  This allows us to visualize spherical harmonics appropriately on a sphere!  I had previously worked out how to do all of this with Basemap, but it seems that [Cartopy is slated to replace Basemap](https://matplotlib.org/basemap/users/intro.html#cartopy-new-management-and-eol-announcement).
 
-This code to display the spherical harmonic computed in the last section highlights just one of Cartopy's many awesome functions. I really enjoy data visualization, and thinking about [map projections](https://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj_f.html) is no exception.
+The following code to display the spherical harmonic computed in the last section highlights just one of Cartopy's many awesome functions. I really enjoy data visualization, and thinking about [map projections](https://www.colorado.edu/geography/gcraft/notes/mapproj/mapproj_f.html) is no exception.
 
 ```python
 import matplotlib.pyplot as plt
@@ -110,7 +110,10 @@ And here is the final result:
 
 ### Spherical Harmonic Animation Script
 
-My script to generate your own spherical harmonic animations can be found [here](https://github.com/keatonb/sphericalharmonics).  It can be called from the command line with many optional arguments to customize the output.  Remember that larger images, more frames, higher latitude/longitude sampling, and higher resolution images (dpi) will increase both the size of the file and the time required to generate it.
+My script to generate general spherical harmonic animations can be found [here](https://github.com/keatonb/sphericalharmonics).  Feel encouraged to use it as widely as you wish.  It can be called from the command line with many optional arguments to customize the output.  Remember that larger images, more frames, higher latitude/longitude sampling, and higher resolution images (dpi) will increase both the size of the file and the time required to generate it.
 
 ---
+
+##### ACKNOWLEDGEMENT
+
 When first figuring out how to display spherical harmonics with Basemap, I found a post by Alex J. DeCaria very helpful.  That no longer seems to be online, but this author did publish a book called [Python Programming and Visualization for Scientists](https://sundogpublishingstore.myshopify.com/products/python-programming-and-visualization-for-scientists-alex-j-decaria) that may be of interest to anyone who enjoyed this blog post.
