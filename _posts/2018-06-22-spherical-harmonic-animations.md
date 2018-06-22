@@ -114,6 +114,5 @@ My script to generate general spherical harmonic animations can be found [here](
 
 ---
 
-##### ACKNOWLEDGEMENT
-
+#### ACKNOWLEDGEMENT
 When first figuring out how to display spherical harmonics with Basemap, I found a post by Alex J. DeCaria very helpful.  That no longer seems to be online, but this author did publish a book called [Python Programming and Visualization for Scientists](https://sundogpublishingstore.myshopify.com/products/python-programming-and-visualization-for-scientists-alex-j-decaria) that may be of interest to anyone who enjoyed this blog post.
