@@ -14,7 +14,7 @@ This post demonstrates three Python tricks: computing spherical harmonics, plott
 
 I won't go into much detail on spherical harmonics (too much detail can be found on [Wikipedia](https://en.wikipedia.org/wiki/Spherical_harmonics) and elsewhere). The important thing is that they are commonly encountered in spherically symmetric systems.  The patterns associated with pulsation modes in stars are an example from my own work, and they also have prominent application for computing the orbitals of electrons in atoms.
 
-Each spherical harmonic is defined by two quantum numbers, \\(\ell\\) and \\(m\\). The number of nodal lines on the surface (lines that are not affected by the harmonic pattern) is equal to \\(\ell\\), and \\(\vert m\vert\\) of these go through the poles. The example above shows \\(\ell=2\\), and \\(m=0\\). If \\(m!=0\\), the pattern appears to rotate about the poles in a direction that depends on the sign of \\(m\\). Because there are a total of \\(\ell\\) nodal lines, \\(\vert m\vert\leq\ell\\).
+Each spherical harmonic is defined by two quantum numbers, \\(\ell\\) and \\(m\\). The number of nodal lines on the surface (lines that are not affected by the harmonic pattern) is equal to \\(\ell\\), and \\(\vert m\vert\\) of these go through the poles. The example above shows \\(\ell=2\\), and \\(m=0\\). If \\(m=0\\), the pattern appears to rotate about the poles in a direction that depends on the sign of \\(m\\). Because there are a total of \\(\ell\\) nodal lines, \\(\vert m\vert\leq\ell\\).
 
 [Scipy provides a function](https://docs.scipy.org/doc/scipy/reference/generated/scipy.special.sph_harm.html) for sampling the values of spherical harmonics at different longitudes and colatitudes.
 
