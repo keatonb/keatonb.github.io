@@ -47,7 +47,8 @@ import cartopy.crs as ccrs
 
 #Set up figure
 fig = plt.figure(figsize=(1,1),tight_layout = {'pad': 0})
-plotcrs = ccrs.Orthographic(0, 30)
+inclination = 60 #degrees from pole
+plotcrs = ccrs.Orthographic(0, 90 - inclination)
 ax = plt.subplot(projection=plotcrs)
 
 #Plot, limiting colors to extreme data values
