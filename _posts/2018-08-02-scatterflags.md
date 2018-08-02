@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Flagging multiple conditions "
+title:  "Flagging multiple conditions in Matplotlib scatter plots"
 date:   2018-08-02 22:00
 categories: [python, plotting]
 permalink: /archivers/scatterflags
