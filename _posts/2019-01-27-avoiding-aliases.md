@@ -18,8 +18,8 @@ observations are not better than smart observations. I want to review
 an important paper that helped me learn how to observe smarter and
 to explain how to apply the insights to problems from my own work. The paper, "[Variable stars: Which Nyquist frequency?](http://adsabs.harvard.edu/abs/1999A%26AS..135....1E)" by
 L. Eyer and P. Bartholdi (1999, A&AS, 135, 1), is one of my
-favorites at only 3 pages long, and I think every time domain
-astronomer should be sure to understand it. It makes two main points:
+favorites at only 3 pages long, and I think it should be required
+reading for every time-domain astronomer. It makes two main points:
 
 1. The Nyquist frequency (see my previous post
 [Nyquist analysis and the pyquist module](http://keatonb.github.io/archivers/pyquist))
