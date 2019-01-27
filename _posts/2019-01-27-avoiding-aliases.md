@@ -36,7 +36,7 @@ average or smallest time between observations.
 In this post, I focus on this second point and explore how this
 can be exploited to obtain better data. First, I will demonstrate the
 argument that I put forward in a
-[white paper](https://arxiv.org/abs/1812.03142) for this
+white paper ([Bell et al. 2018, arXiv:1812.03142](https://arxiv.org/abs/1812.03142)) for this
 effect to be considered while executing the sparse
 time-domain observations of the
 [Large Synoptic Survey Telescope](https://www.lsst.org/) (LSST).
