@@ -18,9 +18,8 @@ responsibility to use that time efficiently. Sometimes more
 observations is not better than smart observations. I want to review
 an important paper that helped me learn how to observe smarter and
 explain how to apply this understanding to a problem from my own
-work. The paper, ["Variable stars: Which Nyquist frequency?" by
-L. Eyer and P. Bartholdi (1999, A&AS, 135, 1)]
-(http://adsabs.harvard.edu/abs/1999A%26AS..135....1E), is one of my
+work. The paper, "[Variable stars: Which Nyquist frequency?](http://adsabs.harvard.edu/abs/1999A%26AS..135....1E)" by
+L. Eyer and P. Bartholdi (1999, A&AS, 135, 1), is one of my
 favorites at only 3 pages long, and I think every time domain
 astronomer should be sure to understand it. It makes two main points:
 
