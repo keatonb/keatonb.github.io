@@ -5,7 +5,6 @@ date:   2019-01-27 20:00
 categories: [observing]
 permalink: /archivers/avoidingaliases
 ---
-
 In time domain research, it is well understood that the pattern of
 observations in time manifests itself in the frequency domain as a
 set of aliases that can confuse your identification of the intrinsic
@@ -98,8 +97,65 @@ We see that the situation is improved as long as the next observation
 does not reinforce the strong concentration of observations near
 hour 6. Aliasing can be made less of a problem for time domain
 astronomy if this effect is taken into consideration as the timing of
-survey observations is being decided.
+the LSST survey observations is being decided.
 
+For one more quick example of how this understanding can be applied in
+practice, let's consider an interesting cataclysmic variable binary
+system SDSS
+J135154.46-064309.0. [We](http://adsabs.harvard.edu/abs/2018MNRAS.477.5646G)
+(Green et al. 2018, MNRAS, 477, 5646). We discovered this variable system
+in space-based time series photometry from the
+[K2](https://keplerscience.arc.nasa.gov/objectives.html#k2)
+mission.  These data revealed two signals with periods near 16
+minutes, separated by precisely 25.1 microHertz. This is close to two times the
+typical diurnal frequency where aliases typically show up. We expect
+that one of these signals corresponds to the orbital frequency of the
+binary system that will also produce a signature of line shifts in
+time series spectroscopy. Determining which of these two photometric
+signals has a corresponding spectroscopic signal is important for
+characterizing this system.
 
+We did obtain time series spectroscopy, but unfortunately we did not
+fully appreciate the problem we were trying to solve when we designed
+the experiment. We did measure a large radial velocity signature, but the
+timing of our observations prevented us from being able to identify
+which photometric frequency was associated with spectroscopic signal for
+our first paper on this system.
 
+We have since devised a better strategy for obtaining these
+spectroscopic observations. Since we know that the two candidate signals are
+separated by precisely 25.1 microHertz, we want to observe at times
+that avoid an alias at this frequency. Because this is not an exact
+multiple of the diurnal alias frequency, there will be a slight
+difference in predicted phase between the two candidate frequencies on
+different nights. Measuring this phase tests the competing hypotheses
+of which photometric frequency the spectroscopic signal is associated
+with.
 
+We use the center-of-gravity approach to determine the alias amplitude
+at 25.1 microHertz that results from measuring the 16-minute
+spectroscopic variations on different combinations of nights.
+
+<img src="http://keatonb.github.io/img/dailyaliasing.png" />
+
+The orange arrow shows the alias amplitude produced by observing on
+three consecutive nights (nights 0, 1, and 2).  This is basically what we did in the
+original paper, and the measurements were too noisy to pick out the
+intrinsic frequency from a set of alias peaks. If one of those nights
+is lost to weather, the situation could be much worse.
+
+The red arrows shows the small alias amplitude produced if the three
+nights of observations are obtained every other night (nights 3, 5,
+and 7). This should
+make the photometric orbital signature very easy to identify.  Even if
+one of these nights is lost, the alias amplitude represented by the
+green arrow lower than for obtained for consecutive observations.
+
+We have applied for observations obtained using this strategy.
+Fingers crossed!
+
+These have only been two examples of how understanding aliasing can
+inform sound observing strategies. This might also inform how to best
+analyze the data that you already have. If you have navigated here
+because you are facing problems of this type, I'd be glad to hear
+about and discuss them.  Feel free to reach out via email or Twitter.
