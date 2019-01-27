@@ -99,7 +99,7 @@ hour 6. Aliasing can be made less of a problem for the time-domain
 LSST data if this effect is taken into consideration as the timing of
 the survey observations is decided.
 
-For one more quick example of how this understanding can be applied in
+For one more example of how this concept can be applied in
 practice, let's consider an interesting cataclysmic variable binary
 system SDSS
 J135154.46-064309.0. We
