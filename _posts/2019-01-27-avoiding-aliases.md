@@ -80,8 +80,8 @@ phase-folded time sampling. Here I've wrapped the observation times
 around a circle, folded on one alias period of 2.18 hours. The
 relative concentration of these points near the bottom of the circle
 cause the center of gravity to be offset by nearly
-half the radius, which is equal to the height of the alias peak. This
-applies for every few frequency of the spectral window.
+half the radius, which is equal to the height of this alias peak. This
+applies for every frequency of the spectral window.
 
 The actionable takeaway is that future observations can be timed to
 move this center of gravity toward the middle of the circle, reducing
