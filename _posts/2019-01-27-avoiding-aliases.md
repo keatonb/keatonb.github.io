@@ -107,7 +107,7 @@ J135154.46-064309.0. We
 in space-based time series photometry from the
 [K2](https://keplerscience.arc.nasa.gov/objectives.html#k2)
 mission.  These data revealed two signals with periods near 16
-minutes, separated by precisely 25.1 micro-Hertz. This is close to two times the
+minutes, separated by precisely 25.08 micro-Hertz. This is close to two times the
 typical diurnal frequency. We expect
 that one of these signals corresponds to the orbital frequency of the
 binary system that will also produce a signature of line shifts in
@@ -124,7 +124,7 @@ which photometric frequency was associated with the spectroscopic signal.
 
 We have since devised a better strategy for obtaining these
 spectroscopic observations. Since we know that the two candidate signals are
-separated by precisely 25.1 micro-Hertz, we want to observe at times
+separated by precisely 25.08 micro-Hertz, we want to observe at times
 that avoid an alias at this frequency. Because this is not an exact
 multiple of the diurnal alias frequency, there will be a slight
 difference in phase between the two candidate frequencies on
@@ -133,7 +133,7 @@ of which photometric frequency the spectroscopic signal is associated
 with.
 
 We use the center-of-gravity approach to compute the alias amplitude
-at 25.1 micro-Hertz that results from measuring the 16-minute
+at 25.08 micro-Hertz that results from measuring the 16-minute
 spectroscopic variations on different combinations of nights.
 
 <img src="http://keatonb.github.io/img/dailyaliasing.png" />
