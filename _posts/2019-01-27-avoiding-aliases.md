@@ -84,7 +84,7 @@ half the radius, which is equal to the height of this alias peak. This
 applies for every frequency of the spectral window.
 
 The actionable takeaway is that future observations can be timed to
-move this center of gravity toward the middle of the circle, reducing
+move these centers of gravity toward the middle of the circle, reducing
 the alias amplitudes. In the next figure, I show how the timing of a single
 new observation will change each of the marked alias amplitudes
 from the previous figure. Green means the amplitude is reduced, and red
