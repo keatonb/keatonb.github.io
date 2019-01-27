@@ -71,7 +71,7 @@ can't observe during the day, there's some ambiguity about exactly how
 many cycles of some periodic variation you missed when you weren't
 observing.  However, the other aliases present in this spectral window
 are easier to avoid and result from some other strict regularity of
-observations being inforced.
+observations being enforced.
 
 <img src="http://keatonb.github.io/img/3yearsLSST.png" />
 
