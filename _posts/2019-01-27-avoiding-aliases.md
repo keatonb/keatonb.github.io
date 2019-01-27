@@ -102,8 +102,8 @@ the survey observations is decided.
 For one more quick example of how this understanding can be applied in
 practice, let's consider an interesting cataclysmic variable binary
 system SDSS
-J135154.46-064309.0. [We](http://adsabs.harvard.edu/abs/2018MNRAS.477.5646G)
-(Green et al. 2018, MNRAS, 477, 5646) discovered this variable system
+J135154.46-064309.0. We
+([Green et al. 2018, MNRAS, 477, 5646](http://adsabs.harvard.edu/abs/2018MNRAS.477.5646G)) discovered this variable system
 in space-based time series photometry from the
 [K2](https://keplerscience.arc.nasa.gov/objectives.html#k2)
 mission.  These data revealed two signals with periods near 16
