@@ -157,8 +157,8 @@ Fingers crossed!
 
 These have only been two examples of how understanding the connection
 between aliasing and observation timing can
-inform sound observing strategies. This can also inform how to best
-analyze data that are already in hand.
+inform sound observing strategies. This concept can also helpful for
+analyzing data that are already in hand.
 
 I love a good puzzle, so feel free to reach out via email or Twitter
 if you have any other problems of this sort that you'd like to
