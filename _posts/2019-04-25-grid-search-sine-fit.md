@@ -150,7 +150,7 @@ axs[1].set_xlim(np.min(ampsample),np.max(ampsample))
 plt.tight_layout()
 plt.show()
 ```
-<img src="sinemarginalizedpdfs.png" />
+<img src="http://keatonb.github.io/img/sinemarginalizedpdfs.png" />
 
 Yay! We have parameter estimates and the empirical uncertainties from the marginalized probability density functions match the precision expected from least-squares fitting (derived analytically by [Montgomery & O'Donoghue 1999, Delta Scuti Star Newsletter, vol. 13, p. 28](http://adsabs.harvard.edu/abs/1999DSSN...13...28M)), as they should.
 
