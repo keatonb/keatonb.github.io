@@ -87,7 +87,7 @@ plt.show()
 ```
 <img src="http://keatonb.github.io/img/ampphasegrid.png" />
 
-It looks like \\(\chi^2\\) is minimized near the input phase and amplitude! But what about an actual measurement and uncertainty for these parameters?  For this we use the likelihood function to convert these to relative probabilities. These are not properly normalized, so we for the probabilities to sum to unity.  Then we marginalize (sum) over each parameter to obtain a probability density estimate for the other. 
+It looks like \\(\chi^2\\) is minimized near the input phase and amplitude (marked with a square)! But what about an actual measurement and uncertainty for these parameters?  For this we use the likelihood function to convert these to relative probabilities, where \\(L\propto\exp{-\chi^2/2}\\) These are not properly normalized, so we just force the probabilities to sum to unity.  Then we marginalize (sum) over each parameter to obtain a probability density estimate for the other. 
 
 ```python
 # Convert these chi squared values to likelihoods
