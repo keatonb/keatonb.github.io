@@ -36,7 +36,7 @@ plt.show()
 ```
 <img src="http://keatonb.github.io/img/sinusoid.png" />
 
-I am going to fit a single sinusoidal model to this time series, which could be easily done with least squares. But we could have a much more complicated model, where each model computation takes hours or days.  It would be expensive to compute these on the fly as we fit the data.  Instead we might pre-compute a grid of models, sampling different values for the model parameters.  Let's do this for the sine model just to show how it works, sampling phase and amplitude spanning the values underlying the simulated data.  
+I am going to fit a single sinusoidal model to this time series, which could be easily done with least squares or direct maximum likelihood estimation. But we could have a much more complicated model, where each model computation takes hours or days.  It would be expensive to compute these on the fly as we fit the data.  Instead we might pre-compute a grid of models, sampling different values for the model parameters.  Let's do this for the sine model just to show how it works, sampling phase and amplitude spanning the values underlying the simulated data.  
 
 ```python
 # Sample phase and amplitude
