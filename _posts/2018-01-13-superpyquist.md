@@ -10,7 +10,7 @@ My collaborators and I recently published a paper in which we determined frequen
 
 The signal processing problem of Nyquist aliasing is well demonstrated by film.  Video is regularly sampled time series data.  Have you ever noticed a rapidly rotating object, such as an aircraft propeller, appearing to rotate slowly or backwards, or to even stand still in a movie?  It sure can look strange!
 
-<iframe src="https://giphy.com/embed/94lybh8udBpSw" width="480" height="270" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+<iframe src="https://giphy.com/embed/hZyYWnUK3owCs" width="480" height="256" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
 
 This effect is due to a mismatch between the low playback rate of film and the rapid rate of motion of the observed object. If more than half a cycle is executed between each observation, the perceived rate (and possibly direction) of motion will be wrong.
 
