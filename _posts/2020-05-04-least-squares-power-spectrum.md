@@ -363,16 +363,16 @@ res = minimize(neglnlike, params, args=(freqsample, data),
 ```
 
 Here's the MLE fit plotted over the same simulated data as above, with
-the least-squares fit also displayed.  The results from MLE and least
-squares are pretty similar in this case, but this is one of the
-friendly realizations where least squares doesn't overfit a single
-peak in the power spectrum.
+the least-squares fit also displayed.  
 
 <img src="http://keatonb.github.io/img/lorentzian_model_example_withMLEfit.png"
 />
 
-Let's run it 10,000 times and see how MLE
-does when we throw many realizations of noise at it.
+The results from MLE and least
+squares are pretty similar in this case, but this is one of the
+friendly realizations where least squares doesn't overfit a single
+peak in the power spectrum.  Let's run it 10,000 times and see how MLE
+does when we throw many realizations of the data at it.
 
 ```python
 #Also run a ton of simulations for the MLE treatment
