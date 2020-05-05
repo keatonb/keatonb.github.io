@@ -288,8 +288,10 @@ lines.  The summary
 statistics giving the median and inner 68% confidence intervals in the titles
 are for the wider fits.
 Inspecting the red distributions, it's clear that the offsets,
-amplitude, and widths returned are all dramatically biased,
-and the central locations of the Lorentzians suffer a loss of precision.
+amplitude, and widths returned are all dramatically biased (the offset
+in particular is mopping up some of the excess power),
+and the central locations of the Lorentzians suffer a loss of
+precision.
 The only good news in this post is that, if
 you fit such data with least squares and you visually inspect your
 fits carefully to make sure you're not falling into the trap of
