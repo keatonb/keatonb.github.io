@@ -292,7 +292,7 @@ amplitude, and widths returned are all dramatically biased (the offset
 in particular is mopping up some of the excess power),
 and the central locations of the Lorentzians suffer a loss of
 precision.
-The only good news in this post is that, if
+The only good news is that, if
 you fit such data with least squares and you visually inspect your
 fits carefully to make sure you're not falling into the trap of
 fitting only one narrow spike of a wider feature, you likely are
