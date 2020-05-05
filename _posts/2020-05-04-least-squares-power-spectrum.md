@@ -181,8 +181,8 @@ nruns = 10000
 results = np.zeros((nruns,4))
 #Keep track of any fits that don't converge
 bad = np.zeros(nruns)
-#rms = np.zeros(nruns)
-for i in tqdm(range(nruns)):
+#Simulate and fit
+for i in range(nruns):
     data = underlying*chi2.rvs(2, size=freqsample.size)/2.
     popt, ier = leastsq(residuals, params, args=(freqsample,data))
     if ier == 1: #Did the fit converge?
@@ -221,7 +221,7 @@ plt.show()
 <img src="http://keatonb.github.io/img/lorentzian_model_example_manyfits.png"
 />
 
-We see that overall many of these fits appear to trace roughtly over
+We see that overall many of these fits appear to trace roughly over
 the underlying model, but also that many fits end up
 especially tall and narrow.  This is what happens when the data are
 dominated by a single value drawn from the tail of the exponential
@@ -297,7 +297,7 @@ fitting only one narrow spike of a wider feature, you likely are
 obtaining parameters that reasonably approximate the underlying
 values. But that's a lot of ifs, and why would you put yourself through
 that?  The answer to why I've done this in the past is that
-programatically it's a one-liner.  The hidden cost is that years later the
+programmatically it's a one-liner.  The hidden cost is that years later the
 guilt will cause you to write a lengthy blog post exploring the
 ramifications.
 
@@ -349,11 +349,11 @@ from scipy.optimize import minimize
 
 #For MLE, minimize the negative log likelihood
 def neglnlike(params, x, y):
+    #h/t James Kuszlewicz
     #Data generated as Chi^2_2 about a Lorentzian plus offset
     model = offsetlorentzian(x, params)
     output = np.sum(np.log(model) + y/model)
     #Check that this is valid, returning large number if not
-    #h/t James Kuszlewicz
     if not np.isfinite(output):
         return 1.0e30
     return output
@@ -381,8 +381,8 @@ nruns = 10000
 mleresults = np.zeros((nruns,4))
 #Keep track of any fits that don't converge
 mlebad = np.zeros(nruns)
-#rms = np.zeros(nruns)
-for i in tqdm(range(nruns)):
+#Simulate and fit
+for i in range(nruns):
     data = underlying*chi2.rvs(2, size=freqsample.size)/2.
     res = minimize(neglnlike, params, args=(freqsample, data),
               method='Nelder-Mead')
@@ -399,7 +399,7 @@ And here's the corner plot for the parameters obtained from MLE:
 <img src="http://keatonb.github.io/img/mle_corner.png"
 />
 
-Nailed it. Over many realizations of random noise, the MLE parameters
+Nailed it! Over many realizations of random noise, the MLE parameters
 are distributed around the true underlying values that I used to
 generate the data. Finally, let's compare the distributions for each
 parameter obtained by MLE (black) and least squares (red) directly.
