@@ -5,7 +5,6 @@ date:   2021-04-09 20:00
 categories: [machine learning, plotting, python]
 permalink: /archivers/hifiplotimages
 ---
-
 As computers become faster and data sets grow larger, machine learning is playing an ever increasing role in astronomy research. One application that I find very compelling is in the field of stellar pulsations, where Marc Hon has lead developments to use deep learning to characterize solar-like oscillating stars based on image representations of their data; specifically, their classifier can determine whether (and where) solar-like oscillations are present in a power spectrum plot.  Here I detail one contribution I've made to this work that might be helpful for other image-based classification efforts: I present code that can turn a line plot into a 2D numpy array representation that is fast and aims to preserve fidelity of the original data.  This aspect of machine learning is called "feature engineering" and is concerned with providing the most informative data that a classifier can use to base decisions on.  This is the area where domain knowledge really gives the astronomer an advantage over the generic data scientist.
 
 A power spectrum represents how much the brightness of a star is observed to vary at different frequencies. This is based on long recordings of the brightness of stars over time, called light curves. Solar-like oscillating stars vary most near a characteristic frequency that is lower for puffier stars.  In the series of power spectrum plots below from [Stello et al. (2015, ApJL, 809, L3)](https://ui.adsabs.harvard.edu/abs/2015ApJ...809L...3S), the darkened oscillation signals appear at higher frequencies for less evolved, more compact stars.
@@ -14,7 +13,7 @@ A power spectrum represents how much the brightness of a star is observed to var
 
 Over the last couple of years I've been contributing to an effort of the [TESS Asteroseismic Science Consortium](https://tasoc.dk/info/tasc.php) to classify the variable stars observed by TESS with machine learning. I'm really enthusiastic about our ensembe approach to classification, which feeds predictions from many different classifiers to a "metaclassifier" to make final predictions.  I made the picture below to demonstrate how we train and test our individual and meta classifiers, from our upcoming paper (Audenaert et al., in prep.).
 
-<img src="http://keatonb.github.io/img/metaclassifiertraining.png" />
+<img src="http://keatonb.github.io/img/metaclassifiertraining.png" width="50%" />
 
 One of these classifiers, SLOSH, is the image-based classifier from Marc Hon.  I spent a little time digging into this classifier at a workshop and want to share the developments I made to speed up the generation of images considerably, and to improve how well they encode the information we want to learn from.
 
@@ -130,3 +129,9 @@ and one supersampled by a factor of 4.
 <img src="http://keatonb.github.io/img/psSupersampled.png" />
 
 These numpy array representations consume less memory, and they skip the process of being written and read from disk, which makes the new approach faster and much more parallelizable.  
+
+Comparing again to the original image used for deep-learning classification of this star's power spectrum, I believe the intentional control over how the array is constructed from the data better preserves the data fidelity, potentially improving classification performance.  
+
+<img src="http://keatonb.github.io/img/psMarcoriginal.png" />
+
+This new implementation is now being used in our large-scale TESS classification effort.  It was fun to work out, and I think it may be useful for other attempts to utilize deep learning for astronomical data classification.  If you do find it useful, I'd be very interested to hear about your application.
