@@ -75,8 +75,10 @@ def plot_to_array(x, y, nbins = 128, supersample = 1,
     
     if supersample > 1: #Super-sample
         #Call yourself and flip orientation again
-        supersampled = 1. - plot_to_array(x, y, nbins = nbins*supersample, supersample = 1,
-                                          minx = minx, maxx = maxx, miny = miny, maxy = maxy)[::-1]
+        supersampled = 1. - plot_to_array(x, y, nbins = nbins*supersample, 
+					  supersample = 1, minx = minx, 
+					  maxx = maxx, miny = miny, 
+                                          maxy = maxy)[::-1]
         for i in range(supersample):
             for j in range(supersample):
                 output += supersampled[i::supersample,j::supersample]
@@ -89,7 +91,8 @@ def plot_to_array(x, y, nbins = 128, supersample = 1,
         ybinwidth = ybinedges[1]-ybinedges[0]
 
         #Resample at/near edges of bins and at original values
-        smalloffset = xbinwidth/(100.*supersample) #to get included in lower-freq bin
+	#offset to ensure inclusion in lower-x bin
+        smalloffset = xbinwidth/(100.*supersample) 
         interpy = interp1d(x,y)
         yatedges = interpy(xbinedges)
 
@@ -100,7 +103,7 @@ def plot_to_array(x, y, nbins = 128, supersample = 1,
         xsamples = xsamples[sort]
         ysamples = ysamples[sort]
 
-        #Get maximum and minimum y in each frequency bin
+        #Get maximum and minimum y in each bin
         maxybin = binned_statistic(xsamples,ysamples,statistic='max',bins=xbinedges)[0]
         minybin = binned_statistic(xsamples,ysamples,statistic='min',bins=xbinedges)[0]
 
