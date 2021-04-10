@@ -23,13 +23,13 @@ Here's an example of one of the original images that SLOSH classifies from.
  
 <img src="http://keatonb.github.io/img/psMarcoriginal.png" />
 
-See how the data don't go all the way to the edge, and how the lines can appear a little blurry?  To me, it would seem the ideal image representation of a plot would have values of 0 in every pixel the plot lines pass through, and values of 1 in untouched pixels.  So I coded up a function to create these.
+See how the data don't go all the way to the edge, and how the lines can appear a little blurry?  To me, it would seem the ideal image representation of a plot would have values of 0 in every pixel the plot lines pass through, and values of 1 in untouched pixels. 
 
 Here's the log-log power spectrum line plot displayed over a 128x128 grid of pixels.  
 
 <img src="http://keatonb.github.io/img/psgrid.png" />
 
-Since these lines are plotted in sorted order, we every pixel in a column between where the line enters and exits that column is touched by the line, and should be colored in.
+Since these lines are plotted in sorted order, every pixel between where the line enters and exits a column is touched by the line, and should be colored in.
 
 <img src="http://keatonb.github.io/img/psgridcolored.png" />
 
