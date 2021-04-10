@@ -29,7 +29,7 @@ Here's the log-log power spectrum line plot displayed over a 128x128 grid of pix
 
 <img src="http://keatonb.github.io/img/psgrid.png" width="500" />
 
-Since these lines are plotted in sorted order, every pixel between where the line enters and exits a column is touched by the line, and should be colored in.
+Since these lines are plotted in sorted order, every pixel between where the line enters and exits a column is touched by the line and should be colored in.  And of course we extend out to the local maxima and/or minima within each bin if they fall outside that range.
 
 <img src="http://keatonb.github.io/img/psgridcolored.png" width="500" />
 
