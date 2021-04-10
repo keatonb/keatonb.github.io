@@ -27,11 +27,11 @@ See how the data don't go all the way to the edge, and how the lines can appear 
 
 Here's the log-log power spectrum line plot displayed over a 128x128 grid of pixels.  
 
-<img src="http://keatonb.github.io/img/psgrid.png" />
+<img src="http://keatonb.github.io/img/psgrid.png" width="500" />
 
 Since these lines are plotted in sorted order, every pixel between where the line enters and exits a column is touched by the line, and should be colored in.
 
-<img src="http://keatonb.github.io/img/psgridcolored.png" />
+<img src="http://keatonb.github.io/img/psgridcolored.png" width="500" />
 
 Here's my function to do this. It also has the option for "supersampling," where a higher-resolution image is computed, and then averaged down to a smaller grayscale image that represents the relative density of plot lines. Without supersampling, the images are strictly black and white.
 
