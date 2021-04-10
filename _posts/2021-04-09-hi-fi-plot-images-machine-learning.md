@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Hi-fidelity plot image representations for machine learning classification"
+title:  "High-fidelity plot image representations for machine learning classification"
 date:   2021-04-09 17:00
 categories: [machine learning, plotting, python]
 permalink: /archivers/hifiplotimages
