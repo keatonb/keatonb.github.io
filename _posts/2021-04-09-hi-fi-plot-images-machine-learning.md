@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Hi-fidelity plot images for machine learning classification"
-date:   2021-04-09 20:00
+date:   2021-04-09 17:00
 categories: [machine learning, plotting, python]
 permalink: /archivers/hifiplotimages
 ---
@@ -136,4 +136,4 @@ Comparing again to the original image used for deep-learning classification of t
 
 <img src="http://keatonb.github.io/img/psMarcoriginal.png" />
 
-This new implementation is now being used in our large-scale TESS classification effort.  It was fun to work out, and I think it may be useful for other attempts to utilize deep learning for astronomical data classification.  If you do find it useful, I'd be very interested to hear about your application.
+This new implementation is now being used in our large-scale TESS classification effort.  It was fun to work out, and I think it may be useful for other attempts to utilize deep learning for astronomical data classification.  If you do find it useful, I'd be very interested to hear about your application!
