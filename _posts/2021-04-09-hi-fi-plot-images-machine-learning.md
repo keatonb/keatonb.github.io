@@ -11,7 +11,7 @@ A power spectrum represents how much the brightness of a star is observed to var
 
 <img src="http://keatonb.github.io/img/stello_powerspectra.jpg" />
 
-Over the last couple of years I've been contributing to an effort of the [TESS Asteroseismic Science Consortium](https://tasoc.dk/info/tasc.php) to classify the variable stars observed by TESS with machine learning. I'm really enthusiastic about our ensembe approach to classification, which feeds predictions from many different classifiers to a "metaclassifier" to make final predictions.  I made the diagram below to demonstrate how we train and test our individual and meta-classifiers, from our upcoming paper (Audenaert et al., in prep.).
+Over the last couple of years I've been contributing to an effort of the [TESS Asteroseismic Science Consortium](https://tasoc.dk/info/tasc.php) to classify the variable stars observed by TESS with machine learning. I'm really enthusiastic about our ensemble approach to classification, which feeds predictions from many different classifiers to a "metaclassifier" to make final predictions.  I made the diagram below to demonstrate how we train and test our individual and meta-classifiers, from our upcoming paper (Audenaert et al., in prep.).
 
 <img src="http://keatonb.github.io/img/metaclassifiertraining.png" width="50%" />
 
