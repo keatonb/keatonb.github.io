@@ -24,8 +24,8 @@ I’ve only drawn the observer-side hemisphere because the other half is merely 
 
 \\[f(i) =
 \begin{cases}
-0,  & i < 0 \\\
-\sin{i},  & 0 \le i \le \pi/2 \\\
+0,  & i < 0; \\\
+\sin{i},  & 0 \le i \le \pi/2; \\\
 0, & i > \pi/2,
 \end{cases}\\]
 
@@ -48,12 +48,12 @@ This relationship is satisfied by the transformation \\(y=\cos{i}\\), or \\(i(y)
 
 So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly distributed for isotropic inclination angles, yielding the easy-to-draw-from p.d.f.:
 
-\\[g\displaylines{(\cos{i}) =
+\\[g(\cos{i}) =
 \begin{cases}
-0,  & \cos{i} < 0 \\\
-1,  & 0 \le \cos{i} \le 1 \\\
+0,  & \cos{i} < 0; \\\
+1,  & 0 \le \cos{i} \le 1; \\\
 0, & \cos{i} > 1.
-\end{cases}}\\]
+\end{cases}\\]
 
 ---
 
