@@ -50,8 +50,8 @@ So we finally arrive at our very useful result that \\(\cos(i)\\) is uniformly d
 
 \\[g(\cos{i}) =
 \begin{cases}
-0,  & \cos{i} < 0 \\\
-1,  & 0 \le \cos{i} \le 1 \\\
+0,  & \cos{i} < 0 \\
+1,  & 0 \le \cos{i} \le 1 \\
 0, & \cos{i} > 1.
 \end{cases}\\]
 
