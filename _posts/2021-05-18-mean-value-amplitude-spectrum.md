@@ -23,6 +23,8 @@ print(chi.stats(df=2, loc=0, scale=1, moments='m'))
 
 > 1.2533141373155003
 
+i.e., \\(\sqrt{2}\Gamma(3/2)\\).
+
 And as always, check this with some simple simulations, here using the [Lightkurve](http://docs.lightkurve.org/) package. 
 
 ```python
