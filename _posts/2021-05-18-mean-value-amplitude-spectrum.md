@@ -6,7 +6,7 @@ categories: [analysis]
 permalink: /archivers/meanamplitude
 ---
 
-I find myself working out the relationship between the noise in time series data to the noise in the periodogram represented as an amplitude spectrum (Fourier transform) fairly often, so I'm writing it down somewhere I won't lose it. I agree with the statement from ["Asteroseismic Data Analysis: Foundations and Techniques"](https://princeton.universitypressscholarship.com/view/10.23943/princeton/9780691162928.001.0001/upso-9780691162928) by Sarbani Basu and Bill Chaplin (Section 5.1.4)
+I find myself working out the relationship between the noise in time series data to the noise in the periodogram represented as an amplitude spectrum (Fourier transform) occasionally, so I'm writing it down somewhere I won't lose it. I agree with the statement from ["Asteroseismic Data Analysis: Foundations and Techniques"](https://princeton.universitypressscholarship.com/view/10.23943/princeton/9780691162928.001.0001/upso-9780691162928) by Sarbani Basu and Bill Chaplin (Section 5.1.4)
 
 > Belt-and-braces checks of the [power spectrum] calibrations may be made by considering limiting dataset cases comprising of either white noise or commensurate sinusoids. It is extremely useful to be able to make a quick back-of-the-envelope prediction of the expected power spectral density for the white-noise case. This provides an estimate of the shot noise background we would expect given known photon-counting rates.
 
