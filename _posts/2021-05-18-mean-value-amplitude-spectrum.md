@@ -46,7 +46,7 @@ print(expectedmean, meanamp)
 
 > 0.00035449077018110325 0.0003565418892748973
 
-Close enough for me.  That's the difference between the expectation value for the mean, and the actual mean for this realization of noise.  Unfortunately the usual notation for expectation value is often used in the literature to refer to the measured average amplitude: \\(<A>\\).  Here's results of a bunch of noise realizations that show that the average average amplitude converges to the expectation value, as expected.
+Close enough for me.  That's the difference between the expectation value for the mean, and the actual mean for this realization of noise.  Unfortunately the usual notation for expectation value is often used in the literature to refer to the measured average amplitude: \\(\langle A\rangle\\).  Here's results of a bunch of noise realizations that show that the average average amplitude converges to the expectation value, as expected.
 
 <img src="http://keatonb.github.io/img/meanampdist.png" width="50%" />
 
