@@ -50,4 +50,4 @@ Close enough for me.  That's the difference between the expectation value for th
 
 <img src="http://keatonb.github.io/img/meanampdist.png" width="50%" />
 
-The point: the expectation value for the mean of the Fourier amplitude spectrum of a Gaussian white noise time series with standard deviation \\(\sigma\\) and \\(N\\) points is \\(\langle\bar{A}\rangle = 1.2533141373155 * \sigma\sqrt{2/N}\\) .
+The point: the expectation value for the mean of the Fourier amplitude spectrum of a Gaussian white noise time series with standard deviation \\(\sigma\\) and \\(N\\) points is \\(\langle\bar{A}\rangle = 1.2533141373155 * \sigma\sqrt{2/N}\\); or, if you prefer gamma functions to ugly coefficients: \\(\langle\bar{A}\rangle = 2\sigma\Gamma(3/2)\sqrt{1/N}\\).
