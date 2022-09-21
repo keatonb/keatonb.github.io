@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Spherical Harmonic Animations with Matplotlib and Cartopy"
+title:  "Spherical harmonic animations with matplotlib and cartopy"
 date:   2018-06-22 23:30
 categories: [python, plotting]
 permalink: /archivers/shanimate
