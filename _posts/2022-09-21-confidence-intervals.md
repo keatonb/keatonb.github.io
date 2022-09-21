@@ -49,7 +49,7 @@ Here's the same plot with a contour drawn through the point (2,2) by setting the
 
 <img src="http://keatonb.github.io/img/GMMcontour2.png" width="65%" />
 
-It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample the distribution finely enough to resolve local extrema and that all local maxima are contained within the sampled area. 
+It looks like about 2.5% of the sampled points do, in fact, fall outside of these contours as we now expect. It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample the distribution finely enough to resolve local extrema and that all local maxima are contained within the sampled area. 
 
 So that's the last step: computing contours to make sure that the pdf is sampled far enough out into the wings for a reliable numerical integration. I use `find_contours` of the scikit-image package to compute contours at a given log likelihood level. A closed contour will end and start at the same point. A contour that leaves the sampled footprint will not. For a GMM, there may be multiple contours at a given level, and they should all be closed.  Here's how I check:
 
