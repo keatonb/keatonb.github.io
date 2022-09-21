@@ -24,12 +24,14 @@ np.sum(np.exp(-Z))
 which gives `1.0000000317591327`, a reasonable value for the probability of something happening *somewhere* given limited numerical precision. Sampling the space in steps of `l`, the probability can be integrated as `np.sum(np.exp(-Z))*l**2`.
 
 A concern comes to mind: what is a sufficient sampling step to for a reliable numerical integration? If we sample with steps that are too large, we may miss (or mischaracterize) narrow features of the pdf. Making sure that we integrate over a sufficiently large area to capture the regions of significant probability is a similar concern. To be sure these decisions are made appropriately, I integrated a single 2D Gaussian with different step sizes and boundaries. The results are shown below, where step sizes and boundary half-widths are given relative to the Gaussian scale parameter, sigma.
-<img src="http://keatonb.github.io/img/GaussianSampling.png" width="50%" />
+
+<img src="http://keatonb.github.io/img/GaussianSampling.png" width="75%" />
+
 At large step sizes and small integration bounds, the total integrated probability diverges from 1.0 as we'd expect. Inspecting more closely, we appear to achieve results good to one part-per-million for all step sizes smaller than sigma, and for integrations that contain the inner 5-sigma regions. For a GMM we should ensure that our sample steps are smaller than the scale parameter of the narrowest Gaussian, and that we sufficiently encompass all components. I'll include additional checks that we've used appropriate values at the end of this post.
 
 Back to the GMM from the scipy example. Say we measure a single event occurring at position (2,2) that we think may have been generated from this GMM pdf. This point is marked with an X on the contour plot below. Is this value consistent with being drawn from this distribution with some reasonable probability? Certainly there are locations where it would have been more likely to randomly observe this event. The question we want to answer in computing credible regions is: what is the probability that we would have observed such an unlikely event?
 
-<img src="http://keatonb.github.io/img/GMMcontours.png" width="50%" />
+<img src="http://keatonb.github.io/img/GMMcontours.png" width="65%" />
 
 We can evaluate the pdf at the (2,2) location to obtain the (natural) log likelihood *denisty* of an event occurring here:
 ```python
@@ -45,7 +47,7 @@ which gives effectively a [p-value](https://en.wikipedia.org/wiki/P-value) of 0.
 
 Here's the same plot with a contour drawn through the point (2,2) by setting the contour level to the corresponding `lnL` value. 
 
-<img src="http://keatonb.github.io/img/GMMcontour2.png" width="50%" />
+<img src="http://keatonb.github.io/img/GMMcontour2.png" width="65%" />
 
 It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample finely enough to resolve local extrema and that local maxima are contained within the sampled area. 
 
