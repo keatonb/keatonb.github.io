@@ -17,7 +17,7 @@ We use [this sklearn demo script](https://scikit-learn.org/stable/auto_examples/
 x = np.arange(-20.0, 30.0)
 y = np.arange(-20.0, 40.0)
 ```
-A 2-component GMM is fit to simulated data, stored as the `mixture.GaussianMixture` object `clf`. A contour plot is also made to indicate the shape of the distribution. We'll actually utilize contours to make our confidence region calculations later. The pdf is a density function in the units of its parameters, so a nice consequence of sampling in steps of one is that we can integrate the pdf over the sampled space by summing the values
+A 2-component GMM is fit to simulated data, stored as the `mixture.GaussianMixture` object `clf`. A contour plot is also made to indicate the shape of the distribution. The pdf is a density function in the units of its parameters, so a nice consequence of sampling in steps of one is that we can integrate the pdf over the sampled space by summing the values
  ```python
 np.sum(np.exp(-Z))
 ```
@@ -27,9 +27,9 @@ A concern comes to mind: what is a sufficient sampling step to for a reliable nu
 
 <img src="http://keatonb.github.io/img/GaussianSampling.png" width="75%" />
 
-At large step sizes and small integration bounds, the total integrated probability diverges from 1.0 as we'd expect. Inspecting more closely, we appear to achieve results good to one part-per-million for all step sizes smaller than sigma, and for integrations that contain the inner 5-sigma regions. For a GMM we should ensure that our sample steps are smaller than the scale parameter of the narrowest Gaussian, and that we sufficiently encompass all components. I'll include additional checks that we've used appropriate values at the end of this post.
+At large step sizes and small integration bounds, the total integrated probability diverges from 1.0 as we'd expect. Inspecting more closely, we appear to achieve results good to one part-per-million for all step sizes smaller than sigma, and for integrations that contain the inner 5-sigma regions. For a GMM we should ensure that our sample steps are smaller than the scale parameter of the narrowest Gaussian, and that we sufficiently encompass all components. A way to check that a sufficient area of the pdf has been sampled using contours is given at the end of this post.
 
-Back to the GMM from the scipy example. Say we measure a single event occurring at position (2,2) that we think may have been generated from this GMM pdf. This point is marked with an X on the contour plot below. Is this value consistent with being drawn from this distribution with some reasonable probability? Certainly there are locations where it would have been more likely to randomly observe this event. The question we want to answer in computing credible regions is: what is the probability that we would have observed such an unlikely event?
+Back to the GMM from the scipy example. Say we measure a single event occurring at position (2,2) that we think may have been generated from this GMM pdf. This point is marked with an X on the contour plot below. Is this value consistent with being drawn from this distribution with some reasonable probability? Certainly there are locations where it would have been more likely to randomly observe this event. The question we want to answer in computing credible regions is: what is the probability that we would have observed such an unlikely event from this distribution?
 
 <img src="http://keatonb.github.io/img/GMMcontours.png" width="65%" />
 
@@ -49,9 +49,9 @@ Here's the same plot with a contour drawn through the point (2,2) by setting the
 
 <img src="http://keatonb.github.io/img/GMMcontour2.png" width="65%" />
 
-It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample finely enough to resolve local extrema and that local maxima are contained within the sampled area. 
+It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample the distribution finely enough to resolve local extrema and that all local maxima are contained within the sampled area. 
 
-So that's the last step: computing contours to make sure that the pdf is sampled far enough out into the wings for a reliable numerical integration. I use `find_contours` of the scikit-image package to compute contours at a given level. A closed contour will end and start at the same point. A contour that leaves the sampled footprint will not. For a GMM, there may be multiple contours at a given level, and they should all be closed.  Here's how I check.
+So that's the last step: computing contours to make sure that the pdf is sampled far enough out into the wings for a reliable numerical integration. I use `find_contours` of the scikit-image package to compute contours at a given log likelihood level. A closed contour will end and start at the same point. A contour that leaves the sampled footprint will not. For a GMM, there may be multiple contours at a given level, and they should all be closed.  Here's how I check:
 
 
 ```python
@@ -69,4 +69,4 @@ def allclosed(contours):
 
 allclosed(contours) #True
 ```
-The function reports that the contours that pass through the point (2,2) are closed in the footprint (sampled from -20 to 30 in X, -20 to 40 in Y). On the other hand, the contour that passes through point (0,10) is not closed and the integrated probability over the sampled area would be underreported.
+The function reports that the contours that pass through the point (2,2) are closed in the footprint (sampled from -20 to 30 in X, -20 to 40 in Y). On the other hand, the contour that passes through point (0,10), for example, is not closed and the integrated probability over the sampled area would be underreported.
