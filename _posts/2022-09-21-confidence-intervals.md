@@ -91,4 +91,4 @@ This cumulative distribution gives the integrated probability over areas more pr
 
 <img src="http://keatonb.github.io/img/cumsumL.png" width="65%" />
 
-The Jupyter Notebook I used for this analysis is available at https://gist.github.com/keatonb/e18dfe66d29779e6eb95fcdd585cb2f8.
+The Jupyter Notebook I used for this analysis is available at [here](https://gist.github.com/keatonb/e18dfe66d29779e6eb95fcdd585cb2f8).
