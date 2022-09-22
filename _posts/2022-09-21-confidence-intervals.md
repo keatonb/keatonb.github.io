@@ -51,7 +51,7 @@ Here's the same plot with a contour drawn through the point (2,2) by setting the
 
 It looks like about 2.5% of the sampled points do, in fact, fall outside of these contours as we now expect. It's good that these contours appear completely closed, as this means that we didn't miss any probability density when we summed over the higher values. This statement makes the important assumptions that we sample the distribution finely enough to resolve local extrema and that all local maxima are contained within the sampled area. 
 
-So that's the last step: computing contours to make sure that the pdf is sampled far enough out into the wings for a reliable numerical integration. I use `find_contours` of the scikit-image package to compute contours at a given log likelihood level. A closed contour will end and start at the same point. A contour that leaves the sampled footprint will not. For a GMM, there may be multiple contours at a given level, and they should all be closed.  Here's how I check:
+That leads to a way to check that the pdf is sampled far enough out into the wings for a reliable numerical integration using contours. I use `find_contours` of the scikit-image package to compute contours at a given log likelihood level. A closed contour will end and start at the same point. A contour that leaves the sampled footprint will not. For a GMM, there may be multiple contours at a given level, and they should all be closed.  Here's how I check:
 
 
 ```python
@@ -70,3 +70,25 @@ def allclosed(contours):
 allclosed(contours) #True
 ```
 The function reports that the contours that pass through the point (2,2) are closed in the footprint (sampled from -20 to 30 in X, -20 to 40 in Y). On the other hand, the contour that passes through point (0,10), for example, is not closed and the integrated probability over the sampled area would be underreported.
+
+Finally, we might want to know the pdf value (or draw contours) corresponding to a specific p-value.  For this, we sort the sampled lnL values from largest to smallest, then map that to the cumulative sum. This gives the amount of integrated probability down to a given pdf value, which we can then interpolate to a probability level of interest. 
+```python
+from scipy.interpolate import interp1d
+
+sortlnL = np.sort(-Z.flatten())[::-1]
+cumsum = np.cumsum(np.exp(sortlnL)*stepsize**2)
+
+# Make interpolator
+lnLatpvalue = interp1d(1-cumsum,sortlnL)
+
+# Evaluate at p-value of interest
+pvalue = 0.05
+lnLatpvalue(pvalue)
+```
+For this example, 95% of distribution is contained within an lnL value of around -6.
+
+This cumulative distribution gives the integrated probability over areas more probable than a given lnL value.
+
+<img src="http://keatonb.github.io/img/cumsumL.png" width="65%" />
+
+The Jupyter Notebook I used for this analysis is available at https://gist.github.com/keatonb/e18dfe66d29779e6eb95fcdd585cb2f8.
