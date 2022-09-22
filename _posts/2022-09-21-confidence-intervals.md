@@ -85,9 +85,7 @@ lnLatpvalue = interp1d(1-cumsum,sortlnL)
 pvalue = 0.05
 lnLatpvalue(pvalue)
 ```
-For this example, 95% of distribution is contained within an lnL value of around -6.
-
-This cumulative distribution gives the integrated probability over areas more probable than a given lnL value.
+This cumulative distribution gives the integrated probability over areas more probable than a given lnL value. For this example, 95% of distribution is contained within an lnL value of around -6.
 
 <img src="http://keatonb.github.io/img/cumsumL.png" width="65%" />
 
