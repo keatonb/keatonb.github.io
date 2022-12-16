@@ -4,14 +4,13 @@ url: "http://keatonb.github.io"    # the protocol and hostname of your site, eg.
 baseurl: "" # the prefix of your site uri, eg. `/jekyll-theme-EasyBook` or just one slash `/`
 #timezone: Asia/Chongqing
 description: >
-  Keaton Bell's blog about science, statistics, data visualization, and other useful tricks.
+  Keaton Bell's blog about science, statistics, data visualization, and other great icebreakers.
 
 # Your information
-email: keatonb@uw.edu
+email: keaton.bell@qc.cuny.edu
 author: Keaton Bell
 avatar: "http://keatonb.github.io/img/JohnsonCity_smallsquare.png"
-profile: Astronomy, statistics, programming in Python, data visualization, data science, and other great ice breakers.<br>See my <a href="http://staff.washington.edu/keatonb/">personal site</a> for more about my research.
-twitter_username: astrokeat
+profile: Astronomy, statistics, programming in Python, data visualization, data science, and other great icebreakers.
 github_username:  keatonb
 
 # Comment Service (Disqus or 多说)
