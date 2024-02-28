@@ -46,5 +46,13 @@ At the risk of just completely overdoing it, here's an animation with a graphica
 
 <img src="http://keatonb.github.io/img/IV.gif" width="95%" />
 
+# Kolmogorov-Smirnov Test
+
+The [K-S test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test) is something anyone doing statistics should be familiar with. It tests how consistent a set of values is with being drawn randomly from a given distribution, or it can be used to test whether two sets of numbers are consistent with being drawn from the same underlying distribution. We do the former here, comparing our phase-wrapped values to a uniform distribution between 0 and 1. If our test period does not cause values to concentrate in phase, they should be more or less randomly distributed as if they were drawn from a uniform distribution. We call the idea that these values are consistent with being random values the "null hypothesis." If the distribution in phase is not consistent with a uniform distribution, we can reject the null hypothesis and claim that there is structure at the test period.
+
+The K-S test makes this assessment by comparing [cumulative probability distributions](https://en.wikipedia.org/wiki/Cumulative_distribution_function). This is like an integrated histogram, but without any binning. 
+
+
+<img src="http://keatonb.github.io/img/mps_ks_cdf.png" width="75%" />
 
 
