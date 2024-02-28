@@ -38,5 +38,13 @@ There's just one gotcha before we ask numpy to compute the variance... there's a
 
 Testing a range of periods that could be present in the data produces a periodogram comparing concentration as a function of test period.
 
-<img src="http://keatonb.github.io/img/mps_ivspec.png" width="50%" />
+<img src="http://keatonb.github.io/img/mps_ivspec.png" width="75%" />
+
+This reaches a peak value near 38 seconds, where we saw values clumping together in the right-side panels of the figures above. 
+
+At the risk of just completely overdoing it, here's an animation with a graphical representation of inverse variance as a function of test period, showing how this IV periodogram is calculated for the full range of periods considered.
+
+<img src="http://keatonb.github.io/img/IV.gif" width="95%" />
+
+
 
