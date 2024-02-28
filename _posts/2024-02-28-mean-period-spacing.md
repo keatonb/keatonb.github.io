@@ -23,9 +23,7 @@ phase = (values % testperiod)/testperiod # values wrapped on test period, betwee
 ```
 Graphically, the phase can be represented on a polar plot with angles ranging from \\(0\\) to  \\(2\pi\\). 
 
-mps_phasewrapped.png
-
-<img src="http://keatonb.github.io/img/mps_phasewrapped.png" width="50%" />
+<img src="http://keatonb.github.io/img/mps_phasewrapped.png" width="25%" />
 
 In my research on white dwarf pulsations, we often measure sets of pulsation periods that belong to a set of measurements that we expect to be spaced roughly evenly in period. 
 
