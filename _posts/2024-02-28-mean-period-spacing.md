@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "Three Statistical Tests for Average Spacing Among Numbers"
+title:  "Three statistical tests for average spacing among numbers"
 date:   2024-02-28 10:00
 categories: [analysis,python]
 permalink: /archivers/mps
