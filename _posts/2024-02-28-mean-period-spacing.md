@@ -56,13 +56,16 @@ The K-S test makes this assessment by comparing [cumulative probability distribu
 
 In Python, K-S tests can be performed with [\\(scipy.stats.kstest\\)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html). It returns two useful numbers: the "statistic," which is the greatest difference between the CDFs, and the ("p-value")[https://en.wikipedia.org/wiki/P-value], describing how consistent the CDFs are with each other accounting for the number of values being compared. In the parlance of mean period spacings, we call the latter Q and we plot the log of it versus periods tested. Compelling period spacings are identified as *minima* in log(Q).
 
-<img src="http://keatonb.github.io/img/mps_ivspec.png" width="75%" />
+<img src="http://keatonb.github.io/img/mps_ftspec.png" width="75%" />
 
 This one seems noisier than the results of the Inverse Variance test. It's more statsy, but less interpretable in my opinion.
 
 Here's an animations depicting what's being considered behind this calculation.
 
 <img src="http://keatonb.github.io/img/KS.gif" width="95%" />
+
+
+# Fourier Transform Test
 
 
 
