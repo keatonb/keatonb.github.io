@@ -50,9 +50,10 @@ At the risk of just completely overdoing it, here's an animation with a graphica
 
 The [K-S test](https://en.wikipedia.org/wiki/Kolmogorov%E2%80%93Smirnov_test) is something anyone doing statistics should be familiar with. It tests how consistent a set of values is with being drawn randomly from a given distribution, or it can be used to test whether two sets of numbers are consistent with being drawn from the same underlying distribution. We do the former here, comparing our phase-wrapped values to a uniform distribution between 0 and 1. If our test period does not cause values to concentrate in phase, they should be more or less randomly distributed as if they were drawn from a uniform distribution. We call the idea that these values are consistent with being random values the "null hypothesis." If the distribution in phase is not consistent with a uniform distribution, we can reject the null hypothesis and claim that there is structure at the test period.
 
-The K-S test makes this assessment by comparing [cumulative probability distributions](https://en.wikipedia.org/wiki/Cumulative_distribution_function). This is like an integrated histogram, but without any binning. 
+The K-S test makes this assessment by comparing [cumulative probability distributions](https://en.wikipedia.org/wiki/Cumulative_distribution_function) (CDF). This is like an integrated histogram, but without any binning. The cumulative distributions for values wrapped on two different test periods are shown below. On the left the distribution of values follows expectations for a uniform distribution quite well, while values are concentrated in phase again on the right side. The top panel shows the difference ("residuals") between the data CDF and the comparison distribution (uniform). The K-S statistic reports the greatest difference between these two curves, marked with a light green line segment in the plot. The larger this line segment, the greater the difference between the values and the comparison distribution, and the more likely we are to reject the null hypothesis.
 
+<img src="http://keatonb.github.io/img/mps_ks_cdf.png" width="95%" />
 
-<img src="http://keatonb.github.io/img/mps_ks_cdf.png" width="75%" />
+In Python, K-S tests can be performed with [\\(scipy.stats.kstest\\)](https://docs.scipy.org/doc/scipy/reference/generated/scipy.stats.kstest.html). 
 
 
