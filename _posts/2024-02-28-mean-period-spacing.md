@@ -58,14 +58,29 @@ In Python, K-S tests can be performed with [\\(scipy.stats.kstest\\)](https://do
 
 <img src="http://keatonb.github.io/img/mps_ksspec.png" width="75%" />
 
-This one seems noisier than the results of the Inverse Variance test. It's more statsy, but less interpretable in my opinion.
+This one seems noisier than the results of the Inverse Variance test. It's more statsy, but less interpretable in my opinion. The biggest dip is at around 24 seconds, which did not match a peak in the IV test.
 
-Here's an animations depicting what's being considered behind this calculation.
+Here's an animation showing what happens under the hood to compute a K-S spectrum for average spacings.
 
 <img src="http://keatonb.github.io/img/KS.gif" width="95%" />
 
 
 # Fourier Transform Test
 
+Finally, the Fourier Transform test. I'm way into Fourier transforms, but if you're used to applying them to time series data, it may not be immediately evident how to apply the FT to this problem. A Fourier transform is often used to reveal variability in time series data by transforming the data into the frequency domain. There, time domain variability shows up as one or more peaks in a graph of the Fourier transform. Essentially, the Fourier transform shows the best-fit amplitude (or power = amplitude^2) of a sinusoidal signal at each frequency sampled by the periodogram.
 
+The Fourier Transform test for structure in the spacing of a set of values is similar to how one computes a "spectral window" for time domain data. I wrote about this a bit in my post on [avoiding frequency aliases](https://keatonb.github.io/archivers/avoidingaliases). A spectral window represents how the way a signal is sampled in time introduces aliases to the Fourier transform. By taking the Fourier transform of a series of a constant values sampled in time identically to your data set (the "window function"), you reveal the signature shape to expect in the frequency domain from a sinusoidal signal in the data. Structure in the timestamps will cause power at non-zero frequencies in the spectral window.
+
+Similarly, structure in any set of values could be uncovered by such a procedure. If we treat the values we want to find structure in as our timestamps and associate a constant positive value to each (0.5 in plots below), we can compute the Fourier transform to identify periodic structure. If there is an even spacing among the values, a sine wave *centered on zero* with a matching period will fit best by reaching its crests up toward our data points. If the period doesn't match, a crest reaching toward a data point would come at the great cost of a trough moving to greater negative numbers and further from another data point; such a sine wave would have a relatively small best-fit amplitude. 
+
+Here's the periodogram that results from the Fourier Transform test:
+<img src="http://keatonb.github.io/img/mps_ftspec.png" width="75%" />
+
+And here's an animation showing how the FT power relates to the best-fit amplitude of a zero-centered sine wave to our set of values. Power is the best-fit amplitude squared.
+
+<img src="http://keatonb.github.io/img/FT.gif" width="95%" />
+
+As it has been shown here, this test appears to be doing something different from the other tests, which wrapped our values on a number line. In reality it is quite similar. It turns out that fitting sine amplitudes to our values is mathematically equivalent to computing the distance of the average position of the values wrapped on the number line. See for yourself.
+
+<img src="http://keatonb.github.io/img/CD.gif" width="95%" />
 
