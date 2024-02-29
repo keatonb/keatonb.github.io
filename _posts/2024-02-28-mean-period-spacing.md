@@ -60,7 +60,7 @@ In Python, K-S tests can be performed with [\\(scipy.stats.kstest\\)](https://do
 
 <img src="http://keatonb.github.io/img/mps_ksspec.png" width="75%" />
 
-This one seems noisier than the results of the Inverse Variance test. It's more statsy, but less interpretable in my opinion. The biggest dip is at around 24 seconds, which did not match a peak in the IV test.
+This one seems noisier than the results of the Inverse Variance test. It's more statsy, but less interpretable in my opinion. It isn't strictly measuring regularity of the values, but rather I aims to reject the notion that the values are distributed uniformly when folded on test periods. The biggest dip is at around 24 seconds, which did not match a peak in the IV test.
 
 Here's an animation showing what happens under the hood to compute a K-S spectrum for average spacings.
 
