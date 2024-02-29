@@ -76,6 +76,7 @@ The Fourier Transform test for structure in the spacing of a set of values is si
 Similarly, structure in any set of values could be uncovered by such a procedure. If we treat the values we want to find structure in as our timestamps and associate a constant positive value to each (0.5 in plots below), we can compute the Fourier transform to identify periodic structure. If there is an even spacing among the values, a sine wave *centered on zero* with a matching period will fit best by reaching up toward our data points. If the period doesn't match, positive parts of the sine wave will want to reach toward the data points, but this would come at the great cost of a negative part of the sine wave moving further from other data points; such a sine wave would have a relatively small best-fit amplitude. 
 
 Here's the periodogram that results from the Fourier Transform test:
+
 <img src="http://keatonb.github.io/img/mps_ftspec.png" width="75%" />
 
 And here's an animation showing how the FT power relates to the best-fit amplitude of a zero-centered sine wave to our set of values. Power is the best-fit amplitude squared.
