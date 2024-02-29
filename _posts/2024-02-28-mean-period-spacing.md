@@ -12,7 +12,7 @@ This situation comes up a lot in my research on white dwarf pulsations. The peri
 
 I will introduce and explain how each of these tests works. While they're fairly straightforward, I haven't found a clear description of the methods that I like.  All three tests are doing something quite similar, if not obvious at first glance. Conventional wisdom is to use all three to ensure that they all report the same average spacing.
 
-These tests were all used in the [analysis of pulsations measured from the TESS spacecraft of the white dwarf WD 0158-160](https://ui.adsabs.harvard.edu/abs/2019A%26A...632A..42B) (Figure 3), where they all supported a mean period spacing of 38.1 seconds between measured pulsation periods of 485.527, 557.649, 597.554, 604.642, 640.533, 678.433, 749.27, and 865.97 seconds. I'll use those values for this demonstration. I keep the code at a minimum, but eventually I will add a link here to some code on GitHub.
+These tests were all used in the [analysis of pulsations measured from the TESS spacecraft of the white dwarf WD 0158-160](https://ui.adsabs.harvard.edu/abs/2019A%26A...632A..42B) (Figure 3), where they all supported a mean period spacing of 38.1 seconds between measured pulsation periods of 485.527, 557.649, 597.554, 604.642, 640.533, 678.433, 749.27, and 865.97 seconds. I'll use those values for this demonstration. I keep the code in the post at a minimum, but the functions to apply these tests for mean period spacing are available at [https://github.com/keatonb/meanperiodspacing/].
 
 # Searching for Periodicity
 
