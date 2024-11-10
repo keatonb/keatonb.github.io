@@ -24,8 +24,8 @@ I’ve only drawn the observer-side hemisphere because the other half is merely 
 
 \\[f(i) =
 \begin{cases}
-0,  & i < 0; \\\\
-\sin{i},  & 0 \le i \le \pi/2; \\\\
+0,  & i < 0; \\\\\\\\
+\sin{i},  & 0 \le i \le \pi/2; \\\\\\\\
 0, & i > \pi/2,
 \end{cases}\\]
 
