@@ -5,7 +5,7 @@ date:   2020-05-04 22:00
 categories: [analysis]
 permalink: /archivers/powerspectrumfits
 ---
-I have come to confess my sin. I have used
+I have come to confess my statistical sin. I have used
 [least squares](https://en.wikipedia.org/wiki/Least_squares) 
 to fit features in the power spectra of variable stars.  In
 particular, I believe I was the first to use least squares to fit
