@@ -6,7 +6,7 @@ categories: [python, analysis]
 permalink: /archivers/pyquist
 ---
 
-My collaborators and I recently published a paper in which we determined frequencies of stellar oscillations that were severely undersampled in time series data. That paper, [*Destroying Aliases from the Ground and Space: Super-Nyquist ZZ Cetis in K2 Long Cadence Data*](http://adsabs.harvard.edu/abs/2017ApJ...851...24B), thoroughly explores the ways that observational sampling affects the signatures of stellar pulsations, but I thought it might be useful to lay out some of the basic ideas and tools behind this type of analysis (including a python module: [pyquist](https://github.com/keatonb/pyquist)). My [main website](http://www2.mps.mpg.de/homes/bell/research.html) has a very short summary of the science, if you're interested.
+My collaborators and I recently published a paper in which we determined frequencies of stellar oscillations that were severely undersampled in time series data. That paper, [*Destroying Aliases from the Ground and Space: Super-Nyquist ZZ Cetis in K2 Long Cadence Data*](http://adsabs.harvard.edu/abs/2017ApJ...851...24B), thoroughly explores the ways that observational sampling affects the signatures of stellar pulsations, but I thought it might be useful to lay out some of the basic ideas and tools behind this type of analysis (including a python module: [pyquist](https://github.com/keatonb/pyquist)).
 
 The signal processing problem of Nyquist aliasing is well demonstrated by film.  Video is regularly sampled time series data.  Have you ever noticed a rapidly rotating object, such as an aircraft propeller, appearing to rotate slowly or backwards, or to even stand still in a movie?  It sure can look strange!
 
@@ -24,6 +24,6 @@ A disturbing consequence is that, without external information, it can be non-tr
 
 <img src="http://keatonb.github.io/img/pyquist_demo.png" />
 
-Unfortunately, this code doesn't resolve the ambiguities alone; you're still going to need to put some external constraints on the system (in my case, I took a small amount of additional data), but pyquist can help to explore the set of possible solutions or to design an experiment that avoids this problem altogether.   This code has already proved useful in my more recent projects (keep an eye on my [main website](http://www2.mps.mpg.de/homes/bell/research.html) or [Twitter](https://twitter.com/astrokeat) for updates on that), and I hope that others might find it helpful too.
+Unfortunately, this code doesn't resolve the ambiguities alone; you're still going to need to put some external constraints on the system (in my case, I took a small amount of additional data), but pyquist can help to explore the set of possible solutions or to design an experiment that avoids this problem altogether.   This code has already proved useful in my more recent projects, and I hope that others might find it helpful too.
 
 Besides, you know you want to `from pyquist import superfreq`... it's super fun to type!
