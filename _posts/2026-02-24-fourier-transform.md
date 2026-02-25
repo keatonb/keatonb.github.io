@@ -25,15 +25,21 @@ The periodogram is powerful for its ability to reveal periodic signals in noisy 
 
 <img src="http://keatonb.github.io/img/SNR.gif" width="50%" />
 
-Initially, all periodogram peaks have similar heights representing that the data are consistent with white noise, with none rising above the 4\\(\langle A\rangle\\) significance threshold. As more data are collected, the noise peaks decrease in amplitude and the significance threshold lowers until one peak is revealed to rise significantly above the rest. As more data are collected, the average noise level decreases as \\(1/\sqrt{N}\\), and the signal-to-noise ratio increases as \\(\sqrt{N}\\).
-
-
+Initially, all periodogram peaks have similar heights representing that the data are consistent with white noise, with none rising above the 4\\(\langle A\rangle\\) significance threshold. As more data are collected, the noise peaks decrease in amplitude and the significance threshold lowers until one peak is revealed to rise significantly above the rest. As more data are collected (\\(N\\) data points), the average noise level decreases as \\(1/\sqrt{N}\\), and the signal-to-noise ratio increases as \\(\sqrt{N}\\).
 
 ## Frequency resolution
 
-(coming soon)
+You'll also notice in the animation above that the peaks get narrower as more data is collected. The frequency resolution goes as \\(1/T\\), where \\(T\\) is the total length of the time series. With continuous, evenly sampled data, the a coherent sinusoidal signal will have the appearance of a  ([sinc function](https://en.wikipedia.org/wiki/Sinc_function)) in the amplitude spectrum, with the peak dropping to zero at every multiple of \\(1/T\\) from the center of the peak. Under these conditions, periodogram values separated by multiples of \\(1/T\\) are not correlated and are said to be "independent" of each other.
+
+If two signals are closer to each other than the frequency resolution, they will appear as one peak until enough data is collected to resolve them. This animation shows how the periodogram of a simulated data set with two closely spaced frequencies evolves as more data is collected.
 
 <img src="http://keatonb.github.io/img/Res.gif" width="50%" />
+
+When the time baseline \\(T\\) is too short to resolve these two signals, they appear as just one wide peak in the periodogram. As more data are collected, eventually the resolution gets smaller than the frequency difference, and the unresolved peak splits into two to reveal the two signal frequencies.
+
+Having two signals with similar frequencies is the situation where we get the ([beating](https://en.wikipedia.org/wiki/Beat_(acoustics))) phemomenon. Superimposing these two sine waves with slightly different frequencies, the phase difference between the signals will slowly evolve, alternating between times of constructive and destructive interference. This is visible as the envelope of variability amplitude seen in the time series plot. The frequency of amplitude modulation from beating is the beat frequency \\(f_{beat} = | f_1 - f_2 |\\). The condition for resolving the peaks is that you observe at least one full beat cycle with an observing duration exceeding \\(1/f_{beat}\\). Before the peaks are strictly resolved, the shape of the peak will depart from a sinc function, revealing that you've got more than just a single coherent sinusoid but you won't be able to pin down exactly what frequencies are involved.
+
+Resolution of the two signal frequencies requires that a full beat cycle has been observed, although the peak will become distorted before it splits, indicating that there is more going on that just one coherent sinusoidal signal. The beat frequency is \\(f_{beat} = | f_1 - f_2 |\\), and the duration necessary to resolve two peaks is 1/f_beat.
 
 ## Nyquist aliasing
 
