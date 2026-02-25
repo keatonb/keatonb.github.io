@@ -15,7 +15,7 @@ For a deeper dive on the statistical considerations for the Fourier-based Lomb-S
 
 The Fourier transform periodogram can be though of as essentially representing the best-fit amplitudes of sinusoids fitted to some data with many different test frequencies. Sometimes the periodogram is displayed in terms of power (or power density), but I prefer best-fit amplitude versus frequency.
 
-Here I am thinking primarily about time series data collected with regular periodic time sampling, with a new observation made every \\(\delta t\\) seconds or days. This will produce the most readily-interpretable data set with fairly straightforward Fourier behavior, such as a well-defined Nyquist frequency. Understanding how to interpret a periodogram of evenly sampled data is an essential preliminary for understanding any unevenly sampled data. 
+Here I am thinking primarily about time series data collected with regular periodic time sampling, with a new observation made every \\(\Delta t\\) seconds or days. This will produce the most readily-interpretable data set with fairly straightforward Fourier behavior, such as a well-defined Nyquist frequency. Understanding how to interpret a periodogram of evenly sampled data is an essential preliminary for understanding any unevenly sampled data. 
 
 An important aspect of Fourier analysis is separating signals of interest from the noise. Time series measurements will each have some random measurement errors. If this noise is uncorrelated and similar throughout the data set, the contribution of noise to the periodogram will be a noise floor of peaks distributed across all sampled frequencies. The peaks will follow some disribution (\\(\chi^2\\) with two degrees of freedom if the noise is Gaussian) that falls off exponentially to high amplitude, so it's unlikely for the noise in your data set to produce a peak that is "very tall." A very tall peak is more likely to represent a real signal, and we might interpret peaks that rise above some significance threshold in the periodogram to be real signals we wish to analyze. Where to set such a threshold depends on your data and the problem at hand. Often it is defined as some factor above the average peak height (noise level; \\(\langle A\rangle\\)) in the periodogram. For demonstration purposes, these examples show a threshold four times above the average amplitude in the periodogram, 4\\(\langle A\rangle\\).
 
@@ -25,18 +25,24 @@ The periodogram is powerful for its ability to reveal periodic signals in noisy 
 
 <img src="http://keatonb.github.io/img/SNR.gif" width="50%" />
 
-Initially, all periodogram peaks have similar heights representing that the data are consistent with white noise, with none rising above the 4\\(\langle A\rangle\\) significance threshold. As more data are collected, the noise peaks decrease in amplitude and the significance threshold lowers until one peak is revealed to rise significantly above the rest. As more data are collected, the average noise level decreases as \\(1/\sqrt(N)\\), and the signal-to-noise ratio increases as \\(\sqrt(N)\\).
+Initially, all periodogram peaks have similar heights representing that the data are consistent with white noise, with none rising above the 4\\(\langle A\rangle\\) significance threshold. As more data are collected, the noise peaks decrease in amplitude and the significance threshold lowers until one peak is revealed to rise significantly above the rest. As more data are collected, the average noise level decreases as \\(1/\sqrt{N}\\), and the signal-to-noise ratio increases as \\(\sqrt{N}\\).
 
 
 
 ## Frequency resolution
 
+(coming soon)
+
 <img src="http://keatonb.github.io/img/Res.gif" width="50%" />
 
 ## Nyquist aliasing
 
+(coming soon)
+
 <img src="http://keatonb.github.io/img/Nyq.gif" width="50%" />
 
 ## Aliasing from gaps in the data
+
+(coming soon)
 
 <img src="http://keatonb.github.io/img/Alias.gif" width="50%" />
