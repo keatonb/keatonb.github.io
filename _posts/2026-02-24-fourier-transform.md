@@ -1,0 +1,42 @@
+---
+layout: post
+title:  "How data sampling affects the Fourier Transform"
+date:   2026-02-24 22:00
+categories: [analysis]
+permalink: /archivers/ft
+---
+
+The Fourier transform and related (e.g., Lomb-Scargle) periodograms are incredibly valuable tools for transforming and interpreting data. I am typically concerned with using the periodogram to detect and characterize variations in time series data, such as recorded brightnesses of stars. I will demonstrate four key considerations for understanding how the qualities of your data affect the representation of signals in the periodogram.
+
+For a deeper dive on the statistical considerations for the Fourier-based Lomb-Scargle periodogram, see 
+(["Understanding the Lomb-Scargle Periodogram"](https://ui.adsabs.harvard.edu/abs/2018ApJS..236...16V/abstract)) from Jake VanderPlas. ([Pyriod](https://github.com/keatonb/Pyriod)) is a Python package I wrote for interactive Fourier analysis of time series data in a Jupyter notebook. The following are essential considerations for performing such an analysis reliably. 
+
+## Some preliminaries
+
+The Fourier transform periodogram can be though of as essentially representing the best-fit amplitudes of sinusoids fitted to some data with many different test frequencies. Sometimes the periodogram is displayed in terms of power (or power density), but I prefer best-fit amplitude versus frequency.
+
+Here I am thinking primarily about time series data collected with regular periodic time sampling, with a new observation made every \\(\delta t\\) seconds or days. This will produce the most readily-interpretable data set with fairly straightforward Fourier behavior, such as a well-defined Nyquist frequency. Understanding how to interpret a periodogram of evenly sampled data is an essential preliminary for understanding any unevenly sampled data. 
+
+An important aspect of Fourier analysis is separating signals of interest from the noise. Time series measurements will each have some random measurement errors. If this noise is uncorrelated and similar throughout the data set, the contribution of noise to the periodogram will be a noise floor of peaks distributed across all sampled frequencies. The peaks will follow some disribution (\\(\chi^2\\) with two degrees of freedom if the noise is Gaussian) that falls off exponentially to high amplitude, so it's unlikely for the noise in your data set to produce a peak that is "very tall." A very tall peak is more likely to represent a real signal, and we might interpret peaks that rise above some significance threshold in the periodogram to be real signals we wish to analyze. Where to set such a threshold depends on your data and the problem at hand. Often it is defined as some factor above the average peak height (noise level; \\(\langle A\rangle\\)) in the periodogram. For demonstration purposes, these examples show a threshold four times above the average amplitude in the periodogram, 4\\(\langle A\rangle\\).
+
+## Signal to noise
+
+The periodogram is powerful for its ability to reveal periodic signals in noisy data that can't be seen by eye. This is especially true when you have a lot of data spanning many cycles of variations. To show how the sensitivity to low-amplitude signals improves as more data are collected, this animation shows the evolution of a simulated noise-dominated time series (top) and its Fourier transform (bottom) as more data are collected.
+
+<img src="http://keatonb.github.io/img/SNR.gif" width="50%" />
+
+Initially, all periodogram peaks have similar heights representing that the data are consistent with white noise, with none rising above the 4\\(\langle A\rangle\\) significance threshold. As more data are collected, the noise peaks decrease in amplitude and the significance threshold lowers until one peak is revealed to rise significantly above the rest. As more data are collected, the average noise level decreases as \\(1/\sqrt(N)\\), and the signal-to-noise ratio increases as \\(\sqrt(N)\\).
+
+
+
+## Frequency resolution
+
+<img src="http://keatonb.github.io/img/Res.gif" width="50%" />
+
+## Nyquist aliasing
+
+<img src="http://keatonb.github.io/img/Nyq.gif" width="50%" />
+
+## Aliasing from gaps in the data
+
+<img src="http://keatonb.github.io/img/Alias.gif" width="50%" />
