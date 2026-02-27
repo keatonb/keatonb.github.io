@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How data sampling affects the Fourier Transform"
+title:  "How data sampling affects the Fourier transform periodogram"
 date:   2026-02-24 22:00
 categories: [analysis]
 permalink: /archivers/ft
@@ -51,7 +51,7 @@ I wrote another post back in 2018 that goes into a little more detail about the 
 
 ## Aliasing from gaps in the data
 
-In Nyquist aliasing (above), a single signal in the time series could be interpreted as having one of a number of discrete underlying signal frequencies because of the how the data are sampled. When there are gaps in the time series data, this also can produce a discrete set of interpretations for the underlying frequency because of uncertainty about exactly how many periods of variation were missed when you weren't collecting data. When you have large gaps in the data, each individual sinusoidal signal will show up as a comb of frequencies, each a potential explanation for the observations that were collected. The animation below shows the best-fit sinusoid matching each peak in this comb, and you see that the model phases up to the collected data, but with different numbers of cycles in between the two sets of observation.
+In Nyquist aliasing (above), a single signal in the time series could be interpreted as having one of a number of discrete underlying signal frequencies because of the how the data are sampled. When there are gaps in the time series data, this also can produce a discrete set of interpretations for the underlying frequency because of uncertainty about exactly how many periods of variation were missed when you weren't collecting data. When you have large gaps in the data, each individual sinusoidal signal will show up as a comb of frequencies, each a potential explanation for the observations that were collected. The animation below shows the best-fit sinusoid matching each peak in this comb, and you see that the model phases up to the collected data, but with different numbers of cycles in between the two sets of observations.
 
 <img src="http://keatonb.github.io/img/Alias.gif" width="50%" />
 
@@ -61,4 +61,4 @@ This is a situation that comes up often in astronomy, where observations may be 
 
 Real data sets can be much more complicated than the simple examples here, but can mostly be understood by extending the intuition that these examples provide. Of course, this doesn't capture everything, especially that not all signals are coherent, unwavering sinusoids.
 
-These graphical examples demonstrate consequences of the [convolution theorem](https://en.wikipedia.org/wiki/Convolution_theorem) for the Fourier transform, which states that products in the time domain are convolutions in the frequency domain. A data set is a product of the underlying signal and the sampling function (called the window function---a record of when observations were made). This is why the details of how the observations are distributed in time affect the resulting periodogram so much, and planning the observations to produce an interpretable periodogram is a critical aspect of experimental design. The Fourier transform of the window function produces the so-called spectral window. It is always worth inspecting the spectral window of your data to understand what what signals will look like in the periodogram and what kind of aliasing can be expected.
+These graphical examples demonstrate consequences of the [convolution theorem](https://en.wikipedia.org/wiki/Convolution_theorem) for the Fourier transform, which states that products in the time domain are convolutions in the frequency domain. A data set is a product of the underlying signal and the sampling function (called the window function---a record of when observations were made). This is why the details of how the observations are distributed in time affect the resulting periodogram so much, and planning the observations to produce an interpretable periodogram is a critical aspect of experimental design. The Fourier transform of the window function produces the so-called spectral window. It is always worth inspecting the spectral window of your data to understand what signals will look like in the periodogram and what kind of aliasing can be expected.
