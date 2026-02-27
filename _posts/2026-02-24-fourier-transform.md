@@ -41,12 +41,24 @@ Having two signals with similar frequencies is the situation where we get the [b
 
 ## Nyquist aliasing
 
-(coming soon)
+Do the peaks in the periodogram appear at locations of their accurate intrinsic frequencies? This depends on whether the time series is sampled rapidly enough that the intrinsic frequency is below the Nyquist frequency. The Nyquist frequency is \\(1/(2\Delta t)\\), where \\(\Delta t\\) is the time spacing between evenly sampled data points. The Nyquist frequency is only well defined for evenly sampled data, and if you compute the periodogram beyond the Nyquist you'll just see a mirror image of the periodogram peaks below the Nyquist limit (no added information).
+
+In this animation, the red is the true underlying signal, and the blue points are the data, initially sampled fewer than twice per cycle. See how the undersampled data still look sinusoidal, just with a lower frequency? The peak that appear below the Nyquist limit is the lowest-frequency interpretation of the data, but there is actually an infinite set of specific higher frequencies that could also potentially explain the data.  As the sampling rate is increased, the Nyquist frequency that I compute the periodogram out to increases. The peak bounces around basically as an optical illusion until it settles down when its intrinsic frequency is below the Nyquist.
 
 <img src="http://keatonb.github.io/img/Nyq.gif" width="50%" />
 
+I wrote another post back in 2018 that goes into a little more detail about the Nyquist: [Nyquist analysis and the pyquist module](https://keatonb.github.io/archivers/pyquist).
+
 ## Aliasing from gaps in the data
 
-(coming soon)
+In Nyquist aliasing (above), a single signal in the time series could be interpreted as having one of a number of discrete underlying signal frequencies because of the how the data are sampled. When there are gaps in the time series data, this also can produce a discrete set of interpretations for the underlying frequency because of uncertainty about exactly how many periods of variation were missed when you weren't collecting data. When you have large gaps in the data, each individual sinusoidal signal will show up as a comb of frequencies, each a potential explanation for the observations that were collected. The animation below shows the best-fit sinusoid matching each peak in this comb, and you see that the model phases up to the collected data, but with different numbers of cycles in between the two sets of observation.
 
 <img src="http://keatonb.github.io/img/Alias.gif" width="50%" />
+
+This is a situation that comes up often in astronomy, where observations may be collected from a telescope one night while the target is observable in the night sky, and then again the next night, with a gap in the intervening daytime. The spacing between the peaks in the comb is \\(1/(\Delta T)\\), where \\(\Delta T\\) is the spacing between sets of observations on either side of the gap. The broader envelope that these peaks fall within is the sinc function corresponding to the duration of each individual, continuous set of observations. With gaps in noisy data, there is great risk of choosing the wrong alias, fitting a sinusoid with small formal uncertainties of signal frequency, and being completely wrong. All statistically viable aliases should be considered.
+
+## Final thoughts
+
+Real data sets can be much more complicated than the simple examples here, but can mostly be understood by extending the intuition that these examples provide. Of course, this doesn't capture everything, especially that not all signals are coherent, unwavering sinusoids.
+
+These graphical examples demonstrate consequences of the [convolution theorem](https://en.wikipedia.org/wiki/Convolution_theorem) for the Fourier transform, which states that products in the time domain are convolutions in the frequency domain. A data set is a product of the underlying signal and the sampling function (called the window function---a record of when observations were made). This is why the details of how the observations are distributed in time affect the resulting periodogram so much, and planning the observations to produce an interpretable periodogram is a critical aspect of experimental design. The Fourier transform of the window function produces the so-called spectral window. It is always worth inspecting the spectral window of your data to understand what what signals will look like in the periodogram and what kind of aliasing can be expected.
