@@ -9,7 +9,7 @@ permalink: /archivers/ft
 The Fourier transform and related (e.g., Lomb-Scargle) periodograms are incredibly valuable tools for transforming and interpreting data. I am typically concerned with using the periodogram to detect and characterize variations in time series data, such as recorded brightnesses of stars. I will demonstrate four key considerations for understanding how the qualities of your data affect the representation of signals in the periodogram.
 
 For a deeper dive on the statistical considerations for the Fourier-based Lomb-Scargle periodogram, see 
-(["Understanding the Lomb-Scargle Periodogram"](https://ui.adsabs.harvard.edu/abs/2018ApJS..236...16V/abstract)) from Jake VanderPlas. ([Pyriod](https://github.com/keatonb/Pyriod)) is a Python package I wrote for interactive Fourier analysis of time series data in a Jupyter notebook. The following are essential considerations for performing such an analysis reliably. 
+["Understanding the Lomb-Scargle Periodogram"](https://ui.adsabs.harvard.edu/abs/2018ApJS..236...16V/abstract) from Jake VanderPlas. [Pyriod](https://github.com/keatonb/Pyriod) is a Python package I wrote for interactive Fourier analysis of time series data in a Jupyter notebook. The following are essential considerations for performing such an analysis reliably. 
 
 ## Some preliminaries
 
