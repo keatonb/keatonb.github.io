@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bootstrapping a Significance Threshold for Periodogram Analysis"
-date:   2026-03-20 16:00
+date:   2026-03-20 11:00
 categories: [analysis]
 permalink: /archivers/sigthresh
 ---
