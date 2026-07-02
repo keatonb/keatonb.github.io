@@ -2,7 +2,7 @@
 layout: post
 title:  "Bootstrapping a significance threshold for periodogram analysis"
 date:   2026-03-20 11:00
-categories: [analysis]
+categories: [analysis,python]
 permalink: /archivers/sigthresh
 ---
 
@@ -19,7 +19,9 @@ Consider the periodogram below of a pulsating white dwarf star observed by NASA'
 This is the amplitude spectrum (square root of the power spectrum on the y axis, in units of parts-per-thousand), showing what the best-fit amplitude is for a series of sinusoids with different frequencies (sampled on the x axis in units of microHertz from zero to the [Nyquist frequency](https://keatonb.github.io/archivers/pyquist)). This is the frequency-domain representation of 60 days of brightness measurements of a white dwarf star taken every 2 minutes, with considerable measurement noise affecting each data point. The noise manifests in the periodogram as a noise floor of peaks with a range of heights distributed across all sampled frequencies. This might look like the grass of an unkempt lawn growing along the bottom of the plot. It is apparent in the periodogram shown above that some peaks stick out taller than others. The question of significance, in the lawn analogy, is whether the tallest peaks are dandelions (signal) or just the tallest of the many blades of grass (noise).
 
 Here is a histogram of amplitude values sampled by the periodogram above (counts shown on a logarithmic scale).
-<img src="http://keatonb.github.io/img/ampdist.png" width="50%" />
+
+<img src="http://keatonb.github.io/img/ampdist.png" width="40%" />
+
 The low-amplitude end of the distribution is well sampled with upwards of thousands of samples per bin, while the high-amplitude tail of the distribution is poorly sampled. More confusing yet, this periodogram was "oversampled," meaning that the frequencies were sampled more densely than the [frequency resolution](https://keatonb.github.io/archivers/ft) so there is more than one point for each peak of the periodogram, and these samples are not independent.
 
 If we make some simple (but not exactly correct) assumptions about the time series data---that each measurement is evenly spaced in time and has uncorrelated Gaussian-random error---then the amplitude values in the periodogram are distributed as a Chi distribution with two degrees of freedom (I describe this a bit more [here](https://keatonb.github.io/archivers/powerspectrumfits) and [here](https://keatonb.github.io/archivers/meanamplitude)). That distribution function drops off exponentially to high amplitude, but there is always some probability that a random noise peak could be sampled at very large amplitude, however small that probability may be deep in the exponential tail. So no matter how high a single peak rises above the rest in the periodogram to distinguish itself from all the other noise peaks, there's always some, perhaps infinitesimal, risk that it's a noise peak itself.
@@ -29,10 +31,24 @@ Acknowledging the risk that we might misinterpret a tall noise peak as genuine s
 Unfortunately, real data sets generally don't satisfy the assumptions that would exactly produce precisely Chi-distributed amplitude noise: the time sampling may not be evenly spaced, and the errors may be non-Gaussian or vary with time. Your results are so sensitive to where you set the significance threshold that the choice should be carefully considered. 
 
 One approach to calculating a threshold based on the properties of your actual data is bootstrapping. Here we assume the "null hypothesis" that the time series contains only noise of unknown distribution, and then we will test whether we can reject this hypothesis and recognize a significant peak in our data set. We still assume that the errors are uncorrelated and consistent across the observations, but the distribution is unknown. Since we don't know the analytic noise distribution, we treat the distribution of observed fluxes as an empirical proxy for the noise distribution under the null hypothesis. If each measurement in the time series is just one realization of the noise distribution, then under the null hypothesis we assume the noise distribution looks like this histogram:
-<img src="http://keatonb.github.io/img/fluxdist.png" width="50%" />
-We can then use this empirical distribution to draw random noise time series to see how high of a peak in the periodogram we can reasonably expect noise to produce on its own.
 
+<img src="http://keatonb.github.io/img/fluxdist.png" width="40%" />
 
+We can then use this empirical distribution to draw random noise time series to see how high of a peak in the periodogram we can reasonably expect noise to produce on its own. To do this, we want to draw from this distribution (with replacement, since the noise is independent) new values of noise to assign to each time series observation in our data set. By keeping the same timestamps of the original data, the resulting periodogram will be similarly behaved.
+
+This function resampled time series light curve values from the original light curve (stored as a [lightkurve.LightCurve](https://lightkurve.github.io/lightkurve/reference/api/lightkurve.LightCurve.html) object).
+```python
+def bootstrap(lc):
+    # redraw flux with replacement from the provided light curve
+    bootstrappedlc = lc.copy().remove_nans() # Make a copy and remove nans
+    N = len(bootstrappedlc) # Number of samples to draw
+    rng = np.random.default_rng() # Random generator thingie
+    bootstrappedlc.flux = rng.choice(lc.flux.value,N,replace=True)*lc.flux.unit # Replace flux
+    return bootstrappedlc.normalize() # Normalize before return
+```
+It is important to include any preprocessing steps that you would apply to your actual data before computing the periodogram, like normalizing the light curve to have an average value of 1.
+
+If we compute periodograms from many of these bootstrapped time series, assuming still that all values in the time series represent the effect of noise, we can observe how high a noise peak can rise in the periodograms. The periodogram should be computed identically to the periodogram of your original data. If we want to know the amplitude threshold above which there is only a false alarm probability (FAP) of 1/1000, we should simulate thousands of bootstrapped periodograms and record the 99.9th percentile of highest peak found in each periodogram.
 
 TODO:...null hypothesis...sampling with replacement...CDF of highest peaks.
 
