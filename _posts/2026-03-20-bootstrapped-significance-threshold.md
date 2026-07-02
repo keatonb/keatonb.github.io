@@ -46,15 +46,18 @@ def bootstrap(lc):
     bootstrappedlc.flux = rng.choice(lc.flux.value,N,replace=True)*lc.flux.unit # Replace flux
     return bootstrappedlc.normalize() # Normalize before return
 ```
-It is important to include any preprocessing steps that you would apply to your actual data before computing the periodogram, like normalizing the light curve to have an average value of 1.
+It is important to include any preprocessing steps that you would apply to your actual data before computing the periodogram, like normalizing the light curve to have an average value of 1. By randomizing the data set, we surely destroy any correlations caused by signals that may be present, and any intrinsic variability is swept into the treatment of noise for the moment.
 
 If we compute periodograms from many of these bootstrapped time series, assuming still that all values in the time series represent the effect of noise, we can observe how high a noise peak can rise in the periodograms. The periodogram should be computed identically to the periodogram of your original data. If we want to know the amplitude threshold above which there is only a false alarm probability (FAP) of 1/1000, we should simulate thousands of bootstrapped periodograms and record the 99.9th percentile of highest peak found in each periodogram.
 
-TODO:...null hypothesis...sampling with replacement...CDF of highest peaks.
+Here is the histogram of the highest amplitude peak found in periodograms of each of 10,000 randomized data sets under the null hypothesis. 
 
+<img src="http://keatonb.github.io/img/bootstrapped.png" width="50%" />
 
+The amplitudes are recorded relative to the median amplitude across the periodogram, and we find for this data set that it is quite common for the highest peak due to noise to rise above 4 times the median amplitude. The red curve shown the cumulative density function (CDF) that integrates to one across the histogram. The FAP = 1/1000 is recorded where the CDF = 0.999, as marked with the vertical dashed line. While we could estimate this value from 1000 random data sets, it would be a noisy estimate determined mostly by the single most extreme value in the tail of the noise distribution. In this example, the 1/1000 FAP level is estimated at 4.96 times the median, while the single most extreme amplitude value reached 5.77 times the median (a noisy estimate of the 1/10000 FAP level). 
 
+We often record the peak amplitude relative to the median because in the real data, there can be some correlated noise that causes the local noise level to change gradually across the periodogram. The significance threshold determined from bootstrapping is then often applied locally in the periodogram relative to the median amplitude computed across a local frequency range. For our white dwarf light curve, here is the periodogram again with the FAP = 1/1000 threshold marked at 4.96 times the median.
 
+<img src="http://keatonb.github.io/img/TIC188087204_FAP.png" width="70%" />
 
-
-
+The peaks near 1500 and 2000 microHz rise well above this significance threshold. We can be sure that such high peaks have far less than a 1 in 1000 chance of being a conspiracy of noise alone. This allows us to reject the null hypothesis that the data contain only noise. We believe that these represent real signals and can interpret them as such. The presence of these signals will have inflated the distribution of noise we used for testing the null hypothesis. Since we do not believe these peaks represent noise, we could fit and remove these signals from the time series and repeat the bootstrapping procedure on the residuals to test if there are any additional signals. This is a typical part of the pre-whitening procedure for periodogram analysis that I am writing a more formal tutorial paper about.
